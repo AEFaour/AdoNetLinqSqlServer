@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfListeFichierRepertoire.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfListeFichierRepertoire"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="684.689" Width="956.918" Background="#FFC35050" FontFamily="Times New Roman" FontSize="16">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Button 
+            Background="Transparent"
+            HorizontalAlignment="Left"
+            Height="45" Margin="732,50,0,0"
+            VerticalAlignment="Top" Width="147" Click="ChangerFichier_Click">
+            <Image Source="/images/folder-icone.jpg" Stretch="Fill" Height="35" Width="53"/>
+        </Button>
+        <ComboBox x:Name="cbbFics" HorizontalAlignment="Left" Height="45" Margin="357,50,0,0" VerticalAlignment="Top" Width="349"/>
+        <!-- Lister les interfaces réseux de votre poste de travaille-->
+        <Button Content="Réseau" HorizontalAlignment="Left" Height="37" Margin="732,115,0,0" VerticalAlignment="Top" Width="147" Click="QuelReseau_Click"/>
+        <ListBox x:Name="lstReseau" HorizontalAlignment="Left" Height="381" Margin="10,263,0,0" VerticalAlignment="Top" Width="939"/>
+
+    </Grid>
+</Window>

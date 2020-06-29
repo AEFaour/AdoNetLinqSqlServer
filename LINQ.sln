@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleLinqPremierTest", "ConsoleLinqPremierTest\ConsoleLinqPremierTest.csproj", "{A8CA7D9F-22D3-4BA3-A638-FA2BD058292E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfListeFichierRepertoire", "WpfListeFichierRepertoire\WpfListeFichierRepertoire.csproj", "{0AB3011C-2E7D-41DD-AE4E-9661E3A69C2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8CA7D9F-22D3-4BA3-A638-FA2BD058292E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8CA7D9F-22D3-4BA3-A638-FA2BD058292E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8CA7D9F-22D3-4BA3-A638-FA2BD058292E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8CA7D9F-22D3-4BA3-A638-FA2BD058292E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AB3011C-2E7D-41DD-AE4E-9661E3A69C2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AB3011C-2E7D-41DD-AE4E-9661E3A69C2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AB3011C-2E7D-41DD-AE4E-9661E3A69C2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AB3011C-2E7D-41DD-AE4E-9661E3A69C2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D9958B0-DA81-47E5-87FA-7A299C8E577D}
+	EndGlobalSection
+EndGlobal
