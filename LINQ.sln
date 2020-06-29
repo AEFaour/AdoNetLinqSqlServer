@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleLinqPremierTest", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfListeFichierRepertoire", "WpfListeFichierRepertoire\WpfListeFichierRepertoire.csproj", "{0AB3011C-2E7D-41DD-AE4E-9661E3A69C2D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppCodeFirstApproch", "WpfAppCodeFirstApproch\WpfAppCodeFirstApproch.csproj", "{C25BCFF0-95B3-4759-8D09-3A9016CDF3FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0AB3011C-2E7D-41DD-AE4E-9661E3A69C2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AB3011C-2E7D-41DD-AE4E-9661E3A69C2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AB3011C-2E7D-41DD-AE4E-9661E3A69C2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C25BCFF0-95B3-4759-8D09-3A9016CDF3FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C25BCFF0-95B3-4759-8D09-3A9016CDF3FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C25BCFF0-95B3-4759-8D09-3A9016CDF3FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C25BCFF0-95B3-4759-8D09-3A9016CDF3FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
