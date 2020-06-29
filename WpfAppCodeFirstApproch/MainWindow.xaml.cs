@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfAppCodeFirstApproch.Model;
 
 namespace WpfAppCodeFirstApproch
 {
@@ -38,6 +39,17 @@ namespace WpfAppCodeFirstApproch
                 int i = dtc.SaveChanges();
             }
 
+        }
+
+        private void TastAccesDB_Cours_Click(object sender, RoutedEventArgs e)
+        {
+            EFEtudiant dtc = new EFEtudiant();
+            using (dtc)
+            {
+                dtc.Cours.Add(new Cours() { Libelle = "Math" });
+                dtc.Cours.Add(new Cours() { Libelle = "Chimie" });
+                int i = dtc.SaveChanges();
+            }
         }
     }
 }

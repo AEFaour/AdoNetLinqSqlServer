@@ -79,8 +79,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\202006291223355_InitialCreate.cs" />
+    <Compile Include="Migrations\202006291223355_InitialCreate.designer.cs">
+      <DependentUpon>202006291223355_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006291429370_AjoutDuree.cs" />
+    <Compile Include="Migrations\202006291429370_AjoutDuree.designer.cs">
+      <DependentUpon>202006291429370_AjoutDuree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Categorie.cs" />
+    <Compile Include="Model\Cours.cs" />
+    <Compile Include="Model\EFEtudiant.cs" />
     <Compile Include="Model\EFVideotheque.cs" />
+    <Compile Include="Model\Etudiant.cs" />
     <Compile Include="Model\Film.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -95,11 +107,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\202006291223355_InitialCreate.resx">
+      <DependentUpon>202006291223355_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006291429370_AjoutDuree.resx">
+      <DependentUpon>202006291429370_AjoutDuree.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

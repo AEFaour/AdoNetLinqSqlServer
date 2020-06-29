@@ -7,17 +7,14 @@ using System.Threading.Tasks;
 
 namespace WpfAppCodeFirstApproch.Model
 {
-    class Categorie
+    class Etudiant
     {
         [Key]
 
         public int Id { get; set; }
-        public string Libelle { get; set; }
+        public string Nom { get; set; }
+        public string Prenom { get; set; }
 
-
-        // un film peut être un film d'action -- un film d'avanture ...
-        // Dans une categorie, on peut avoir plusieurs films
-
-        public virtual ICollection<Film> Films { get; set; }
+        public virtual ICollection<Cours> Cours { get; set; }
     }
 }
