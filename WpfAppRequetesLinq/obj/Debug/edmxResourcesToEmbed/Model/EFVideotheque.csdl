@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BBVideotheque2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Films">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Titre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Duree" Type="Int32" Nullable="false" />
+    <Property Name="Resume" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Annee" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Genres" Relationship="Self.GenreFilms" FromRole="Films" ToRole="Genres" />
+  </EntityType>
+  <EntityType Name="Genres">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Films" Relationship="Self.GenreFilms" FromRole="Genres" ToRole="Films" />
+  </EntityType>
+  <EntityType Name="pays">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="libelle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="GenreFilms">
+    <End Role="Films" Type="Self.Films" Multiplicity="*" />
+    <End Role="Genres" Type="Self.Genres" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="BBVideotheque2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Films" EntityType="Self.Films" />
+    <EntitySet Name="Genres" EntityType="Self.Genres" />
+    <EntitySet Name="pays" EntityType="Self.pays" />
+    <AssociationSet Name="GenreFilms" Association="Self.GenreFilms">
+      <End Role="Films" EntitySet="Films" />
+      <End Role="Genres" EntitySet="Genres" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

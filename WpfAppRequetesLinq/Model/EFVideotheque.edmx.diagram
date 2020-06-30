@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6a00542bf45640f99282c544a0a087cd" Name="Diagram1">
+        <EntityTypeShape EntityType="BBVideotheque2Model.Films" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBVideotheque2Model.Genres" Width="1.5" PointX="6.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBVideotheque2Model.pays" Width="1.5" PointX="3.625" PointY="3.25" IsExpanded="true" />
+        <AssociationConnector Association="BBVideotheque2Model.GenreFilms" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

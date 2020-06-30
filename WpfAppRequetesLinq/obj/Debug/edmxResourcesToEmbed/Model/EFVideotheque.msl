@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BBVideotheque2ModelStoreContainer" CdmEntityContainer="BBVideotheque2Entities">
+    <EntitySetMapping Name="Films">
+      <EntityTypeMapping TypeName="BBVideotheque2Model.Films">
+        <MappingFragment StoreEntitySet="Films">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Titre" ColumnName="Titre" />
+          <ScalarProperty Name="Duree" ColumnName="Duree" />
+          <ScalarProperty Name="Resume" ColumnName="Resume" />
+          <ScalarProperty Name="Annee" ColumnName="Annee" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genres">
+      <EntityTypeMapping TypeName="BBVideotheque2Model.Genres">
+        <MappingFragment StoreEntitySet="Genres">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pays">
+      <EntityTypeMapping TypeName="BBVideotheque2Model.pays">
+        <MappingFragment StoreEntitySet="pays">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="GenreFilms" TypeName="BBVideotheque2Model.GenreFilms" StoreEntitySet="GenreFilms">
+      <EndProperty Name="Films">
+        <ScalarProperty Name="Id" ColumnName="Film_Id" />
+      </EndProperty>
+      <EndProperty Name="Genres">
+        <ScalarProperty Name="Id" ColumnName="Genre_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

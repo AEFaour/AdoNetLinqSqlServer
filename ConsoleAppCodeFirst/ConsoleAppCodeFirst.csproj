@@ -53,6 +53,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\202006300742594_InitialCreate.cs" />
+    <Compile Include="Migrations\202006300742594_InitialCreate.designer.cs">
+      <DependentUpon>202006300742594_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006300807392_AjoutDiscrib.cs" />
+    <Compile Include="Migrations\202006300807392_AjoutDiscrib.designer.cs">
+      <DependentUpon>202006300807392_AjoutDiscrib.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006300818139_AjoutDuree.cs" />
+    <Compile Include="Migrations\202006300818139_AjoutDuree.designer.cs">
+      <DependentUpon>202006300818139_AjoutDuree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\EFVideotheque.cs" />
     <Compile Include="Model\Genre.cs" />
     <Compile Include="Model\Film.cs" />
@@ -62,6 +75,17 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202006300742594_InitialCreate.resx">
+      <DependentUpon>202006300742594_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006300807392_AjoutDiscrib.resx">
+      <DependentUpon>202006300807392_AjoutDiscrib.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006300818139_AjoutDuree.resx">
+      <DependentUpon>202006300818139_AjoutDuree.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

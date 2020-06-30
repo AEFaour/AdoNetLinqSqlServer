@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppCodeFirstApproch", "W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppCodeFirst", "ConsoleAppCodeFirst\ConsoleAppCodeFirst.csproj", "{2741DF13-155C-4A2A-A9FA-8928D507EE01}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppRequetesLinq", "WpfAppRequetesLinq\WpfAppRequetesLinq.csproj", "{C8A914B7-4946-416A-B0D8-E0912C3E5907}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2741DF13-155C-4A2A-A9FA-8928D507EE01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2741DF13-155C-4A2A-A9FA-8928D507EE01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2741DF13-155C-4A2A-A9FA-8928D507EE01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8A914B7-4946-416A-B0D8-E0912C3E5907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8A914B7-4946-416A-B0D8-E0912C3E5907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8A914B7-4946-416A-B0D8-E0912C3E5907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8A914B7-4946-416A-B0D8-E0912C3E5907}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

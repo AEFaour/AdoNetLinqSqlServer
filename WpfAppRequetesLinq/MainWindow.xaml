@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfAppRequetesLinq.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppRequetesLinq"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="432" Width="764" Background="#FFF9F9F9">
+    <Grid Margin="0,0,20,10">
+        <StackPanel HorizontalAlignment="Left" Height="366" Margin="10,53,0,0" VerticalAlignment="Top" Width="125" Background="#FFEC8888">
+            <Button Content="Button"/>
+        </StackPanel>
+        <Button Content="Import Films" HorizontalAlignment="Left" Height="26" Margin="10,53,0,0" VerticalAlignment="Top" Width="125" Click="ImporterFilm_Click"/>
+        <Button Content="Projection Linq" HorizontalAlignment="Left" Height="26" Margin="10,79,0,0" VerticalAlignment="Top" Width="125" Click="Projection_Click"/>
+        <Button Content="Projection Lambda" HorizontalAlignment="Left" Height="26" Margin="10,105,0,0" VerticalAlignment="Top" Width="125" Click="ProjectionLambda_Click" />
+        <Button Content="Where Click" HorizontalAlignment="Left" Height="26" Margin="10,131,0,0" VerticalAlignment="Top" Width="125" Click="WhereLinq_Click" />
+        <DataGrid x:Name="dtgResultat" HorizontalAlignment="Left" Height="224" Margin="140,167,0,0" VerticalAlignment="Top" Width="586" Background="#FF7782C9"/>
+        <TextBlock HorizontalAlignment="Left" Height="42" Margin="10,7,0,0" TextWrapping="Wrap" Text="Requetes LINQ" VerticalAlignment="Top" Width="716" Background="#FFB677C9" RenderTransformOrigin="0.5,0.5" FontFamily="Times New Roman" FontSize="16" TextOptions.TextFormattingMode="Display" FontWeight="Bold"
+>
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-2.045"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.464"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="txtLinq" HorizontalAlignment="Left" Height="52" Margin="149,53,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="577" />
+        <!--<TextBlock x:Name="txtLamdda" HorizontalAlignment="Left" Height="52" Margin="149,110,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="577"/>-->
+    </Grid>
+</Window>
