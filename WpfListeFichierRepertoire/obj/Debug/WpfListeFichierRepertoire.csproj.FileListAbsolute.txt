@@ -1,3 +1,4 @@
+C:\Users\Anas FAOUR\source\repos\LINQ\WpfListeFichierRepertoire\bin\Debug\images\folder-icone.jpg
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfListeFichierRepertoire\bin\Debug\images\icofichiers.jpg
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfListeFichierRepertoire\bin\Debug\WpfListeFichierRepertoire.exe.config
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfListeFichierRepertoire\bin\Debug\WpfListeFichierRepertoire.exe
@@ -15,4 +16,3 @@ C:\Users\Anas FAOUR\source\repos\LINQ\WpfListeFichierRepertoire\obj\Debug\WpfLis
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfListeFichierRepertoire\obj\Debug\WpfListeFichierRepertoire.csproj.CoreCompileInputs.cache
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfListeFichierRepertoire\obj\Debug\WpfListeFichierRepertoire.exe
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfListeFichierRepertoire\obj\Debug\WpfListeFichierRepertoire.pdb
-C:\Users\Anas FAOUR\source\repos\LINQ\WpfListeFichierRepertoire\bin\Debug\images\folder-icone.jpg

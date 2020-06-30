@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfListeFichierRepertoire",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppCodeFirstApproch", "WpfAppCodeFirstApproch\WpfAppCodeFirstApproch.csproj", "{C25BCFF0-95B3-4759-8D09-3A9016CDF3FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAppCodeFirst", "ConsoleAppCodeFirst\ConsoleAppCodeFirst.csproj", "{2741DF13-155C-4A2A-A9FA-8928D507EE01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C25BCFF0-95B3-4759-8D09-3A9016CDF3FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C25BCFF0-95B3-4759-8D09-3A9016CDF3FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C25BCFF0-95B3-4759-8D09-3A9016CDF3FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2741DF13-155C-4A2A-A9FA-8928D507EE01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2741DF13-155C-4A2A-A9FA-8928D507EE01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2741DF13-155C-4A2A-A9FA-8928D507EE01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2741DF13-155C-4A2A-A9FA-8928D507EE01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
