@@ -304,19 +304,53 @@ namespace WpfAppRequetesLinq
             // Lambda
 
             var _result1 = dtc.Films.Select(x => new { x.Annee }).Distinct();
+            string _s = String.Empty;
 
             if (ok)
             {
                 DataContext = _resultA.ToList();
                 txtLinq.Text = " (from f in dtc.Films select new { f.Annee }).Distinct(); ";
+                _s = "Total " + _resultA.Count();
             }
             else
             {
                 DataContext = _result1.ToList();
                 txtLinq.Text = " dtc.Films.Select(x => x.Annee).Distinct();";
+                _s = "Total " + _result1.Count();
             }
+            MessageBox.Show(_s);
             ok = !ok;
 
+        }
+
+        private void GroupBy_Click(object sender, RoutedEventArgs e)
+        {
+            // Donnez le nombre de films par Annee
+            // Via Linq Like ou à l'aide de la syntaxe fonctionnelle
+
+            //select Annee, count(*)
+            //from films
+            //group by Annee;
+            var _resultat = from f in dtc.Films
+                            group f by f.Annee into g
+
+                            select new { Annee = g.Key, Total = g.Count() };
+
+
+            var _resultat1 = dtc.Films.GroupBy(
+                f => f.Annee).Select(x => new { Annee = x.Key, Total = x.Count() });
+
+            if (ok)
+            {
+                DataContext = _resultat.ToList();
+                txtLinq.Text = " from f in dtc.Films  group f by f.Annee into g select new { Annee = g.Key, Total = g.Count() }; ";
+            }
+            else
+            {
+                DataContext = _resultat1.ToList();
+                txtLinq.Text = "dtc.Films.GroupBy(x => x.Annee).Select(x => new { Annee = x.Key, Total = x.Count() }); ";
+            }
+            ok = !ok;
         }
     }
 }

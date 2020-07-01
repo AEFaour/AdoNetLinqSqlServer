@@ -19,3 +19,5 @@ C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppRequetesLinq\obj\Debug\WpfAppRequete
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppRequetesLinq\obj\Debug\WpfAppRequetesLinq.csproj.CopyComplete
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppRequetesLinq\obj\Debug\WpfAppRequetesLinq.exe
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppRequetesLinq\obj\Debug\WpfAppRequetesLinq.pdb
+C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppRequetesLinq\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
+C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppRequetesLinq\obj\Debug\WpfAppRequetesLinq.csprojAssemblyReference.cache

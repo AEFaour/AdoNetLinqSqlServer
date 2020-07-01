@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WpfAppBibliotheque.Model.EFBiliotheque">
+    <Position X="4.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\EFBiliotheque.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Auteurs" />
+      <Property Name="Livres" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="WpfAppBibliotheque.Model.Auteur">
+    <Position X="1.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Model\Auteur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfAppBibliotheque.Model.Livre">
+    <Position X="7.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAgBAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Model\Livre.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Auteurs" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

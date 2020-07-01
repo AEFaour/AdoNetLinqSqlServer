@@ -1,0 +1,22 @@
+﻿<Window x:Class="WpfAppBibliotheque.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppBibliotheque"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel HorizontalAlignment="Left" Width="214" Background="#FFCB512D" Margin="0,36,0,10">
+            <Button Content="Ajoute Livre" Click="AjoutLivre_Click" />
+            <Button Content="Infos Livre" Click="InfosLivre_Click" />
+        </StackPanel>
+        <DataGrid  x:Name="ResDG" Margin="219,134,0,10" Background="#FFF34141"/>
+        <TextBlock TextAlignment="Right" HorizontalAlignment="Center"  Height="31" Margin="0,0,10,0"
+                    TextWrapping="Wrap" Text="Requetes LINQ  " VerticalAlignment="top"  Width="782"
+                    Background="#FFDE8970" FontSize="15" Foreground="#FFFFF2A2" 
+                    TextOptions.TextFormattingMode="Display" FontWeight="Bold"/>
+        <TextBlock x:Name="ResTxt" HorizontalAlignment="Left"
+                   Margin="219,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="55" Width="573" Foreground="#FF142FA8"/>
+    </Grid>
+</Window>

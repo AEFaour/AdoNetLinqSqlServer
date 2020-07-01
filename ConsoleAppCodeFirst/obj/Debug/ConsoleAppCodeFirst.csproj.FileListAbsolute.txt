@@ -5,7 +5,6 @@ C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\bin\Debug\EntityFramew
 C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\bin\Debug\EntityFramework.xml
 C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\obj\Debug\ConsoleAppCodeFirst.csprojAssemblyReference.cache
 C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\obj\Debug\ConsoleAppCodeFirst.Migrations.InitialCreate.resources
 C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\obj\Debug\ConsoleAppCodeFirst.Migrations.AjoutDiscrib.resources
 C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\obj\Debug\ConsoleAppCodeFirst.Migrations.AjoutDuree.resources
