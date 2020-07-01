@@ -286,5 +286,11 @@ namespace WpfAppRequetesLinq
             }
             ok = !ok;
         }
+
+        private void View_Click(object sender, RoutedEventArgs e)
+        {
+            var _result = dtc.vFilmLabelle.Select(x => new { x.Id, x.Titre, x.libelle });
+            DataContext = _result.ToList();
+        }
     }
 }

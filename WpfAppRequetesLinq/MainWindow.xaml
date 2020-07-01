@@ -17,7 +17,9 @@
         <Button Content="Requête Many" HorizontalAlignment="Left" Height="26" Margin="10,157,0,0" VerticalAlignment="Top" Width="125" Click="ManyToMany_Click" />
         <Button Content="Jointure Linq" HorizontalAlignment="Left" Height="26" Margin="10,183,0,0" VerticalAlignment="Top" Width="125" Click="Join_Click" />
         <Button Content="Jointure Lambda" HorizontalAlignment="Left" Height="26" Margin="10,209,0,0" VerticalAlignment="Top" Width="125" Click="Join_Lambda_Click" />
+
         <Button Content="Tri" HorizontalAlignment="Left" Height="26" Margin="10,235,0,0" VerticalAlignment="Top" Width="125" Click="Tri_Click"/>
+        <Button Content="Vue" HorizontalAlignment="Left" Height="26" Margin="10,261,0,0" VerticalAlignment="Top" Width="125" Click="View_Click" />
         <DataGrid ItemsSource="{Binding}" x:Name="dtgResultat" HorizontalAlignment="Left" Height="224" Margin="140,167,0,0" VerticalAlignment="Top" Width="586" Background="#FF7782C9"/>
         <TextBlock HorizontalAlignment="Left" Height="42" Margin="10,7,0,0" TextWrapping="Wrap" Text="Requetes LINQ" VerticalAlignment="Top" Width="716" Background="#FFB677C9" RenderTransformOrigin="0.5,0.5" FontFamily="Times New Roman" FontSize="16" TextOptions.TextFormattingMode="Display" FontWeight="Bold"
 >

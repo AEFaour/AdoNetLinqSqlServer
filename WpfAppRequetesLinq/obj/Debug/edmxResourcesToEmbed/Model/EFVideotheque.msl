@@ -46,5 +46,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="vFilmLabelle">
+      <EntityTypeMapping TypeName="BBVideotheque2Model.vFilmLabelle">
+        <MappingFragment StoreEntitySet="vFilmLabelle">
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="idPays" ColumnName="idPays" />
+          <ScalarProperty Name="Titre" ColumnName="Titre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

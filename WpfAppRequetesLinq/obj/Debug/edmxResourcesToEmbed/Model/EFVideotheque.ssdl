@@ -41,6 +41,18 @@
     <Property Name="idPays" Type="int" />
     <Property Name="mois" Type="nvarchar" MaxLength="15" />
   </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'BBVideotheque2.dbo.vFilmLabelle' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="vFilmLabelle">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="idPays" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Titre" Type="nvarchar(max)" />
+    <Property Name="idPays" Type="int" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="100" />
+  </EntityType>
   <Association Name="FK__PaysFilm__idFilm__52593CB8">
     <End Role="Films" Type="Self.Films" Multiplicity="0..1" />
     <End Role="PaysFilm" Type="Self.PaysFilm" Multiplicity="*" />
@@ -99,6 +111,14 @@
     <EntitySet Name="Genres" EntityType="Self.Genres" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="pays" EntityType="Self.pays" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PaysFilm" EntityType="Self.PaysFilm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vFilmLabelle" EntityType="Self.vFilmLabelle" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vFilmLabelle].[Id] AS [Id], 
+    [vFilmLabelle].[Titre] AS [Titre], 
+    [vFilmLabelle].[idPays] AS [idPays], 
+    [vFilmLabelle].[libelle] AS [libelle]
+    FROM [dbo].[vFilmLabelle] AS [vFilmLabelle]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK__PaysFilm__idFilm__52593CB8" Association="Self.FK__PaysFilm__idFilm__52593CB8">
       <End Role="Films" EntitySet="Films" />
       <End Role="PaysFilm" EntitySet="PaysFilm" />

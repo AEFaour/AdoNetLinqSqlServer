@@ -6,7 +6,6 @@ C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppRequetesLinq\bin\Debug\EntityFramewo
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppRequetesLinq\bin\Debug\EntityFramework.xml
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppRequetesLinq\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppRequetesLinq\bin\Debug\fr\EntityFramework.resources.dll
-C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppRequetesLinq\obj\Debug\WpfAppRequetesLinq.csprojAssemblyReference.cache
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppRequetesLinq\obj\Debug\MainWindow.g.cs
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppRequetesLinq\obj\Debug\App.g.cs
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppRequetesLinq\obj\Debug\WpfAppRequetesLinq_Content.g.cs

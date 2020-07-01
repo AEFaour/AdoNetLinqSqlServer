@@ -67,6 +67,9 @@
     <Compile Include="Model\PaysFilm.cs">
       <DependentUpon>EFVideotheque.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\vFilmLabelle.cs">
+      <DependentUpon>EFVideotheque.tt</DependentUpon>
+    </Compile>
     <Compile Include="viewModel\ClassRequetesLinq.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

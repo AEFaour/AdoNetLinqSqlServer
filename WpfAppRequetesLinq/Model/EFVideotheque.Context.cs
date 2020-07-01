@@ -29,5 +29,6 @@ namespace WpfAppRequetesLinq.Model
         public virtual DbSet<Genres> Genres { get; set; }
         public virtual DbSet<pays> pays { get; set; }
         public virtual DbSet<PaysFilm> PaysFilm { get; set; }
+        public virtual DbSet<vFilmLabelle> vFilmLabelle { get; set; }
     }
 }

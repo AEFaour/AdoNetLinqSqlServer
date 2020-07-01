@@ -49,6 +49,7 @@
       <End Role="pays" EntitySet="pays" />
       <End Role="PaysFilm" EntitySet="PaysFilm" />
     </AssociationSet>
+    <EntitySet Name="vFilmLabelle" EntityType="BBVideotheque2Model.vFilmLabelle" />
   </EntityContainer>
   <EntityType Name="PaysFilm">
     <Key>
@@ -85,4 +86,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="vFilmLabelle">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="idPays" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Titre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="idPays" Type="Int32" Nullable="false" />
+    <Property Name="libelle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

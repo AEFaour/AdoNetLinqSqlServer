@@ -12,6 +12,7 @@
         <EntityTypeShape EntityType="BBVideotheque2Model.PaysFilm" Width="1.5" PointX="1.125" PointY="4.625" />
         <AssociationConnector Association="BBVideotheque2Model.FK__PaysFilm__idFilm__52593CB8" />
         <AssociationConnector Association="BBVideotheque2Model.FK__PaysFilm__idPays__534D60F1" />
+        <EntityTypeShape EntityType="BBVideotheque2Model.vFilmLabelle" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
