@@ -136,15 +136,52 @@ namespace WpfAppRequetesLinq
             else
             {
                 //Exemple 1
-                var _result = dtc.Films.Where(x => x.Titre.ToLower().Contains("dino"));
+                var _resultat = dtc.Films.Where(x => x.Titre.ToLower().Contains("dino"));
                 txtLinq.Text = "dtc.Films.Where(x=>x.Titre.ToLower().Contains(\"dino\"));";
                 //Exemple 2 
-                _result = dtc.Films.Where(y => y.Resume.StartsWith("A"));
+                _resultat = dtc.Films.Where(y => y.Resume.StartsWith("A"));
                 txtLinq.Text = "dtc.Films.Where(y => y.Resume.StartsWith(\"A\"));";
-                dtgResultat.ItemsSource = _result.ToList();
+                dtgResultat.ItemsSource = _resultat.ToList();
                 ok = !ok;
 
             }
+
+        }
+
+        private void Join_Click(object sender, RoutedEventArgs e)
+        {
+
+            //
+        }
+
+        private void ManyToMany_Click(object sender, RoutedEventArgs e)
+        {
+            // pour le cas Many to Many : Films -> Genre
+            var _resultat = from f in dtc.Films
+                            from g in f.Genres
+                            select new { f.Id, f.Titre, idGenre = g.Id, g.Libelle };
+            txtLinq.Text = "from f in dtc.Films from g in f.Genres select new { f.Id, f.Titre, idGenre = g.Id, g.Libelle }; ";
+            dtgResultat.ItemsSource = _resultat.ToList();
+
+            // Many to Many : Genres -> Film (retrouver les filkms à partir de la classe genre)
+
+            var _resultat1 = from g in dtc.Genres
+                             from f in g.Films
+                             select new { IDGenre = g.Id, g.Libelle, f.Id, f.Titre };
+            txtLinq.Text = "from g in dtc.Genres from f in g.Films select new { IDGenre = g.Id, g.Libelle, f.Id, f.Titre  }; ";
+            if (ok)
+            {
+                txtLinq.Text = "from g in dtc.Genres from f in g.Films select new { IDGenre = g.Id, g.Libelle, f.Id, f.Titre  }; ";
+                dtgResultat.ItemsSource = _resultat1.ToList();
+            }
+            else
+            {
+                txtLinq.Text = "from f in dtc.Films from g in f.Genres select new { f.Id, f.Titre, idGenre = g.Id, g.Libelle }; ";
+                dtgResultat.ItemsSource = _resultat.ToList();
+            }
+            ok = !ok;
+
+
 
         }
     }
