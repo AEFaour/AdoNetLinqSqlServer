@@ -292,5 +292,31 @@ namespace WpfAppRequetesLinq
             var _result = dtc.vFilmLabelle.Select(x => new { x.Id, x.Titre, x.libelle });
             DataContext = _result.ToList();
         }
+
+        private void Distinct_Click(object sender, RoutedEventArgs e)
+        {
+            // Linq Like distinct 
+            // Selct la liste des dates de sorties
+
+            var _resultA = (from f in dtc.Films
+                            select new { f.Annee }).Distinct();
+
+            // Lambda
+
+            var _result1 = dtc.Films.Select(x => new { x.Annee }).Distinct();
+
+            if (ok)
+            {
+                DataContext = _resultA.ToList();
+                txtLinq.Text = " (from f in dtc.Films select new { f.Annee }).Distinct(); ";
+            }
+            else
+            {
+                DataContext = _result1.ToList();
+                txtLinq.Text = " dtc.Films.Select(x => x.Annee).Distinct();";
+            }
+            ok = !ok;
+
+        }
     }
 }
