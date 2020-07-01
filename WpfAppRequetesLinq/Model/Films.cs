@@ -18,6 +18,7 @@ namespace WpfAppRequetesLinq.Model
         public Films()
         {
             this.Genres = new HashSet<Genres>();
+            this.PaysFilm = new HashSet<PaysFilm>();
         }
     
         public int Id { get; set; }
@@ -28,5 +29,7 @@ namespace WpfAppRequetesLinq.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Genres> Genres { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PaysFilm> PaysFilm { get; set; }
     }
 }

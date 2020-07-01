@@ -36,5 +36,15 @@
         <ScalarProperty Name="Id" ColumnName="Genre_Id" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="PaysFilm">
+      <EntityTypeMapping TypeName="BBVideotheque2Model.PaysFilm">
+        <MappingFragment StoreEntitySet="PaysFilm">
+          <ScalarProperty Name="mois" ColumnName="mois" />
+          <ScalarProperty Name="idPays" ColumnName="idPays" />
+          <ScalarProperty Name="idFilm" ColumnName="idFilm" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

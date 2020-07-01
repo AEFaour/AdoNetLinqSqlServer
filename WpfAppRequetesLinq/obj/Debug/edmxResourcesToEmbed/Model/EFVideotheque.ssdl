@@ -32,6 +32,39 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="libelle" Type="nvarchar" MaxLength="100" />
   </EntityType>
+  <EntityType Name="PaysFilm">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idFilm" Type="int" />
+    <Property Name="idPays" Type="int" />
+    <Property Name="mois" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <Association Name="FK__PaysFilm__idFilm__52593CB8">
+    <End Role="Films" Type="Self.Films" Multiplicity="0..1" />
+    <End Role="PaysFilm" Type="Self.PaysFilm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Films">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PaysFilm">
+        <PropertyRef Name="idFilm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PaysFilm__idPays__534D60F1">
+    <End Role="pays" Type="Self.pays" Multiplicity="0..1" />
+    <End Role="PaysFilm" Type="Self.PaysFilm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pays">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="PaysFilm">
+        <PropertyRef Name="idPays" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_dbo_GenreFilms_dbo_Films_Film_Id">
     <End Role="Films" Type="Self.Films" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -65,6 +98,15 @@
     <EntitySet Name="GenreFilms" EntityType="Self.GenreFilms" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Genres" EntityType="Self.Genres" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="pays" EntityType="Self.pays" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaysFilm" EntityType="Self.PaysFilm" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__PaysFilm__idFilm__52593CB8" Association="Self.FK__PaysFilm__idFilm__52593CB8">
+      <End Role="Films" EntitySet="Films" />
+      <End Role="PaysFilm" EntitySet="PaysFilm" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PaysFilm__idPays__534D60F1" Association="Self.FK__PaysFilm__idPays__534D60F1">
+      <End Role="pays" EntitySet="pays" />
+      <End Role="PaysFilm" EntitySet="PaysFilm" />
+    </AssociationSet>
     <AssociationSet Name="FK_dbo_GenreFilms_dbo_Films_Film_Id" Association="Self.FK_dbo_GenreFilms_dbo_Films_Film_Id">
       <End Role="Films" EntitySet="Films" />
       <End Role="GenreFilms" EntitySet="GenreFilms" />

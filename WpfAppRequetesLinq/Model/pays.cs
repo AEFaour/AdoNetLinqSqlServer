@@ -14,7 +14,16 @@ namespace WpfAppRequetesLinq.Model
     
     public partial class pays
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public pays()
+        {
+            this.PaysFilm = new HashSet<PaysFilm>();
+        }
+    
         public int id { get; set; }
         public string libelle { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PaysFilm> PaysFilm { get; set; }
     }
 }

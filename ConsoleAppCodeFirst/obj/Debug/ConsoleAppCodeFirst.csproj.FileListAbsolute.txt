@@ -1,0 +1,16 @@
+C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\bin\Debug\ConsoleAppCodeFirst.exe.config
+C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\bin\Debug\ConsoleAppCodeFirst.exe
+C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\bin\Debug\ConsoleAppCodeFirst.pdb
+C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\bin\Debug\EntityFramework.dll
+C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\bin\Debug\EntityFramework.xml
+C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\obj\Debug\ConsoleAppCodeFirst.csprojAssemblyReference.cache
+C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\obj\Debug\ConsoleAppCodeFirst.Migrations.InitialCreate.resources
+C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\obj\Debug\ConsoleAppCodeFirst.Migrations.AjoutDiscrib.resources
+C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\obj\Debug\ConsoleAppCodeFirst.Migrations.AjoutDuree.resources
+C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\obj\Debug\ConsoleAppCodeFirst.csproj.GenerateResource.cache
+C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\obj\Debug\ConsoleAppCodeFirst.csproj.CoreCompileInputs.cache
+C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\obj\Debug\ConsoleAppCodeFirst.csproj.CopyComplete
+C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\obj\Debug\ConsoleAppCodeFirst.exe
+C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleAppCodeFirst\obj\Debug\ConsoleAppCodeFirst.pdb

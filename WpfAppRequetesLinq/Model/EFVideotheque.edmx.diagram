@@ -7,8 +7,11 @@
       <Diagram DiagramId="6a00542bf45640f99282c544a0a087cd" Name="Diagram1">
         <EntityTypeShape EntityType="BBVideotheque2Model.Films" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
         <EntityTypeShape EntityType="BBVideotheque2Model.Genres" Width="1.5" PointX="6.5" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BBVideotheque2Model.pays" Width="1.5" PointX="3.625" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBVideotheque2Model.pays" Width="1.5" PointX="6.5" PointY="4.875" IsExpanded="true" />
         <AssociationConnector Association="BBVideotheque2Model.GenreFilms" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BBVideotheque2Model.PaysFilm" Width="1.5" PointX="1.125" PointY="4.625" />
+        <AssociationConnector Association="BBVideotheque2Model.FK__PaysFilm__idFilm__52593CB8" />
+        <AssociationConnector Association="BBVideotheque2Model.FK__PaysFilm__idPays__534D60F1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

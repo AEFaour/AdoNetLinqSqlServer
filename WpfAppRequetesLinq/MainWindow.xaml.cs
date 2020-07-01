@@ -148,11 +148,7 @@ namespace WpfAppRequetesLinq
 
         }
 
-        private void Join_Click(object sender, RoutedEventArgs e)
-        {
 
-            //
-        }
 
         private void ManyToMany_Click(object sender, RoutedEventArgs e)
         {
@@ -160,15 +156,14 @@ namespace WpfAppRequetesLinq
             var _resultat = from f in dtc.Films
                             from g in f.Genres
                             select new { f.Id, f.Titre, idGenre = g.Id, g.Libelle };
-            txtLinq.Text = "from f in dtc.Films from g in f.Genres select new { f.Id, f.Titre, idGenre = g.Id, g.Libelle }; ";
-            dtgResultat.ItemsSource = _resultat.ToList();
+
 
             // Many to Many : Genres -> Film (retrouver les filkms à partir de la classe genre)
 
             var _resultat1 = from g in dtc.Genres
                              from f in g.Films
-                             select new { IDGenre = g.Id, g.Libelle, f.Id, f.Titre };
-            txtLinq.Text = "from g in dtc.Genres from f in g.Films select new { IDGenre = g.Id, g.Libelle, f.Id, f.Titre  }; ";
+                             select new { f.Id, f.Titre, idGenre = g.Id, g.Libelle };
+
             if (ok)
             {
                 txtLinq.Text = "from g in dtc.Genres from f in g.Films select new { IDGenre = g.Id, g.Libelle, f.Id, f.Titre  }; ";
@@ -180,8 +175,85 @@ namespace WpfAppRequetesLinq
                 dtgResultat.ItemsSource = _resultat.ToList();
             }
             ok = !ok;
+        }
+
+        private void Join_Click(object sender, RoutedEventArgs e)
+        {
+            // --iD du Pays et le Titre du Film (utiliser uniquement 2 tables)
+            //select PaysFilm.idPays, films.Titre from PaysFilm 
+            //Join Films on PaysFilm.idFilm = Films.Id;
+
+            var _result = from f in dtc.Films
+                          join pf in dtc.PaysFilm
+                          on f.Id equals pf.idFilm
+                          select new { pf.idPays, f.Titre };
+
+            dtgResultat.ItemsSource = _result.ToList();
+            txtLinq.Text = "from f in dtc.Films join pf in dtc.PaysFilm on f.Id equals pf.idFilm select new { pf.idPays, f.Titre }; ";
+
+            //--- Donner l'ID du Film et le libelle du Pays
+            //select PaysFilm.idFilm IDFilm, Pays.libelle from pays
+            //join PaysFilm on Pays.Id = PaysFilm.idPays;
+
+            var _result1 = from p in dtc.pays
+                           join pf in dtc.PaysFilm
+                           on p.id equals pf.idPays
+                           select new { pf.idFilm, p.libelle };
+
+            dtgResultat.ItemsSource = _result1.ToList();
+            txtLinq.Text = "from p in dtc.pays join pf in dtc.PaysFilm on p.id equals pf.idPays select new { pf.idFilm, p.libelle }; ";
+
+            // Exercice 3 : afficher l'ID du film , son titre, l'Id du pays et son libelle
+            var _result2 = from f in dtc.Films
+                           join pf in dtc.PaysFilm
+                           on f.Id equals pf.idFilm
+                           join p in dtc.pays
+                           on pf.idPays equals p.id
+                           select new { f.Id, f.Titre, p.id, p.libelle };
+
+            dtgResultat.ItemsSource = _result2.ToList();
+            txtLinq.Text = "ffrom f in dtc.Films join pf in dtc.PaysFilm on f.Id equals pf.idFilm join p in dtc.pays on join p in dtc.pays select new { f.Id, f.Titre, p.id, p.libelle }; ";
+
+        }
+
+        private void Join_Lambda_Click(object sender, RoutedEventArgs e)
+        {
+            // --iD du Pays et le Titre du Film (utiliser uniquement 2 tables)
+            //select PaysFilm.idPays, films.Titre from PaysFilm 
+            //Join Films on PaysFilm.idFilm = Films.Id;
+            var _result = dtc.Films.Join(dtc.PaysFilm,
+                  f => f.Id,
+                  pf => pf.idFilm,
+                  (f, pf) => new { f.Titre, pf.idPays });
+            dtgResultat.ItemsSource = _result.ToList();
+            txtLinq.Text = "dtc.Films.Join(dtc.PaysFilm, f => f.Id, pf => pf.idFilm, (f, pf) => new { f.Titre, pf.idPays }); ";
 
 
+            //--- Donner l'ID du Film et le libelle du Pays
+            //select PaysFilm.idFilm IDFilm, Pays.libelle from pays
+            //join PaysFilm on Pays.Id = PaysFilm.idPays;
+
+            var _result1 = dtc.pays.Join(dtc.PaysFilm,
+                  p => p.id,
+                  pf => pf.idPays,
+                  (p, pf) => new { p.libelle, pf.idFilm });
+            dtgResultat.ItemsSource = _result1.ToList();
+            txtLinq.Text = " dtc.pays.Join(dtc.PaysFilm, p => p.id, pf => pf.idPays, (p, pf) => new { p.libelle, pf.idFilm }); ";
+
+            // Exercice 3 : afficher l'ID du film , son titre, id et libelle de pays
+
+            var _result2 = dtc.Films.Join(dtc.PaysFilm,
+                  f => f.Id,
+                  pf => pf.idFilm,
+                  (f, pf) => new { f.Id, f.Titre, pf.idPays }).Join(
+                dtc.pays,
+                fpf => fpf.idPays,
+                p => p.id,
+                (fpf, p) => new { fpf.Id, fpf.Titre, p.id, p.libelle }
+                );
+
+            dtgResultat.ItemsSource = _result2.ToList();
+            txtLinq.Text = " dtc.Films.Join(dtc.PaysFilm, f => f.Id, pf => pf.idFilm, (f, pf) => new { f.Id, f.Titre, pf.idPays }).Join( dtc.pays, fpf => fpf.idPays, p => p.id, (fpf, p) => new { fpf.Id, fpf.Titre, p.id, p.libelle }); ";
 
         }
     }
