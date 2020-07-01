@@ -167,12 +167,14 @@ namespace WpfAppRequetesLinq
             if (ok)
             {
                 txtLinq.Text = "from g in dtc.Genres from f in g.Films select new { IDGenre = g.Id, g.Libelle, f.Id, f.Titre  }; ";
-                dtgResultat.ItemsSource = _resultat1.ToList();
+                //dtgResultat.ItemsSource = _resultat1.ToList();
+                DataContext = _resultat1.ToList();
             }
             else
             {
                 txtLinq.Text = "from f in dtc.Films from g in f.Genres select new { f.Id, f.Titre, idGenre = g.Id, g.Libelle }; ";
-                dtgResultat.ItemsSource = _resultat.ToList();
+                //dtgResultat.ItemsSource = _resultat.ToList();
+                DataContext = _resultat.ToList();
             }
             ok = !ok;
         }
@@ -252,11 +254,37 @@ namespace WpfAppRequetesLinq
                 (fpf, p) => new { fpf.Id, fpf.Titre, p.id, p.libelle }
                 );
 
-            dtgResultat.ItemsSource = _result2.ToList();
+
             txtLinq.Text = " dtc.Films.Join(dtc.PaysFilm, f => f.Id, pf => pf.idFilm, \n" +
                 "(f, pf) => new { f.Id, f.Titre, pf.idPays }).Join( dtc.pays,\n fpf => fpf.idPays," +
                 "\n p => p.id, (fpf, p) => new { fpf.Id, fpf.Titre, p.id, p.libelle }\n); ";
+            //dtgResultat.ItemsSource = _result2.ToList();
+            // Remarque sur la DataContext
+            DataContext = _result2.ToList();
+        }
 
+        private void Tri_Click(object sender, RoutedEventArgs e)
+        {
+
+            // trier les films sur le titre descendant et sur l'année desc
+            //Linq like sql
+            var _result = from f in dtc.Films
+                          orderby f.Titre ascending, f.Annee descending
+                          select f;
+            //Fonctionnelle
+            var _result1 = dtc.Films.OrderBy(x => x.Titre).OrderByDescending(x => x.Annee);
+            if (ok)
+            {
+                DataContext = _result.ToList();
+                txtLinq.Text = " from f in dtc.Films orderby f.Titre ascending, f.Annee descending select f; ";
+
+            }
+            else
+            {
+                DataContext = _result1.ToList();
+                txtLinq.Text = " dtc.Films.OrderBy(x => x.Titre).OrderByDescending(x => x.Annee); ";
+            }
+            ok = !ok;
         }
     }
 }
