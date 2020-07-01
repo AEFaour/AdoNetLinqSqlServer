@@ -253,7 +253,11 @@ namespace WpfAppRequetesLinq
                 );
 
             dtgResultat.ItemsSource = _result2.ToList();
-            txtLinq.Text = " dtc.Films.Join(dtc.PaysFilm, f => f.Id, pf => pf.idFilm, (f, pf) => new { f.Id, f.Titre, pf.idPays }).Join( dtc.pays, fpf => fpf.idPays, p => p.id, (fpf, p) => new { fpf.Id, fpf.Titre, p.id, p.libelle }); ";
+            txtLinq.Text = " dtc.Films.Join(dtc.PaysFilm, \n " +
+                "f => f.Id, pf => pf.idFilm, \n" +
+                "(f, pf) => new { f.Id, f.Titre, pf.idPays }).Join(\n" +
+                " dtc.pays,\n fpf => fpf.idPays,\n p => p.id,\n" +
+                " (fpf, p) => new { fpf.Id, fpf.Titre, p.id, p.libelle }\n); ";
 
         }
     }
