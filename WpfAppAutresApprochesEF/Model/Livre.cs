@@ -23,6 +23,8 @@ namespace WpfAppAutresApprochesEF.Model
         public int Id { get; set; }
         public string Titre { get; set; }
         public int ISBN { get; set; }
+        public string AnneeParuation { get; set; }
+        public string langue { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Auteur> Auteurs { get; set; }
