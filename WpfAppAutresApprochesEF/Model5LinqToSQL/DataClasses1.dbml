@@ -1,1 +1,46 @@
-﻿
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BBVideotheque2" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-SEOEC0J2\SQLEXPRESS;Initial Catalog=BBVideotheque2;Integrated Security=True" SettingsObjectName="WpfAppAutresApprochesEF.Properties.Settings" SettingsPropertyName="BBVideotheque2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Films" Member="Films">
+    <Type Name="Films">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Titre" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Duree" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Resume" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Annee" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Films_GenreFilms" Member="GenreFilms" ThisKey="Id" OtherKey="Film_Id" Type="GenreFilms" />
+      <Association Name="Films_PaysFilm" Member="PaysFilm" ThisKey="Id" OtherKey="idFilm" Type="PaysFilm" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Genres" Member="Genres">
+    <Type Name="Genres">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Libelle" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Genres_GenreFilms" Member="GenreFilms" ThisKey="Id" OtherKey="Genre_Id" Type="GenreFilms" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GenreFilms" Member="GenreFilms">
+    <Type Name="GenreFilms">
+      <Column Name="Genre_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Film_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="Films_GenreFilms" Member="Films" ThisKey="Film_Id" OtherKey="Id" Type="Films" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Genres_GenreFilms" Member="Genres" ThisKey="Genre_Id" OtherKey="Id" Type="Genres" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PaysFilm" Member="PaysFilm">
+    <Type Name="PaysFilm">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idFilm" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idPays" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mois" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Association Name="Films_PaysFilm" Member="Films" ThisKey="idFilm" OtherKey="Id" Type="Films" IsForeignKey="true" />
+      <Association Name="pays_PaysFilm" Member="pays" ThisKey="idPays" OtherKey="id" Type="pays" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.pays" Member="pays">
+    <Type Name="pays">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="libelle" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="pays_PaysFilm" Member="PaysFilm" ThisKey="id" OtherKey="idPays" Type="PaysFilm" />
+    </Type>
+  </Table>
+</Database>
