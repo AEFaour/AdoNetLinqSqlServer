@@ -4,3 +4,4 @@ C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleLinqPremierTest\bin\Debug\ConsoleLi
 C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleLinqPremierTest\obj\Debug\ConsoleLinqPremierTest.csproj.CoreCompileInputs.cache
 C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleLinqPremierTest\obj\Debug\ConsoleLinqPremierTest.exe
 C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleLinqPremierTest\obj\Debug\ConsoleLinqPremierTest.pdb
+C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleLinqPremierTest\obj\Debug\ConsoleLinqPremierTest.csprojAssemblyReference.cache

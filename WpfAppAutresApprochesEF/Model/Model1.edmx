@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="Auteurs" EntityType="Model1.Store.Auteurs" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Livres" EntityType="Model1.Store.Livres" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Categories" EntityType="Model1.Store.Categories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ClubSet" EntityType="Model1.Store.ClubSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AuteurLivre" EntityType="Model1.Store.AuteurLivre" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_AuteurLivre_Auteur" Association="Model1.Store.FK_AuteurLivre_Auteur">
+      <End Role="Auteur" EntitySet="Auteurs" />
+      <End Role="AuteurLivre" EntitySet="AuteurLivre" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuteurLivre_Livre" Association="Model1.Store.FK_AuteurLivre_Livre">
+      <End Role="Livre" EntitySet="Livres" />
+      <End Role="AuteurLivre" EntitySet="AuteurLivre" />
+    </AssociationSet>
+    <AssociationSet Name="LivreCategorie" Association="Model1.Store.LivreCategorie">
+      <End Role="Livre" EntitySet="Livres" />
+      <End Role="Categorie" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="AuteurClub" Association="Model1.Store.AuteurClub">
+      <End Role="Auteur" EntitySet="Auteurs" />
+      <End Role="Club" EntitySet="ClubSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Auteurs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Prenom" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Adresse_Numero" Type="int" Nullable="false" />
+    <Property Name="Adresse_Rue" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Adresse_CP" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Adresse_Complement" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Club_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Livres">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ISBN" Type="int" Nullable="false" />
+    <Property Name="Categorie_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClubSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AuteurLivre">
+    <Key>
+      <PropertyRef Name="Auteurs_Id" />
+      <PropertyRef Name="Livres_Id" />
+    </Key>
+    <Property Name="Auteurs_Id" Type="int" Nullable="false" />
+    <Property Name="Livres_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="LivreCategorie">
+    <End Role="Livre" Type="Model1.Store.Livres" Multiplicity="*" />
+    <End Role="Categorie" Type="Model1.Store.Categories" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Categorie">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Livre">
+        <PropertyRef Name="Categorie_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AuteurClub">
+    <End Role="Auteur" Type="Model1.Store.Auteurs" Multiplicity="*" />
+    <End Role="Club" Type="Model1.Store.ClubSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Club">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Auteur">
+        <PropertyRef Name="Club_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuteurLivre_Auteur">
+    <End Role="Auteur" Type="Model1.Store.Auteurs" Multiplicity="1" />
+    <End Role="AuteurLivre" Type="Model1.Store.AuteurLivre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Auteur">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuteurLivre">
+        <PropertyRef Name="Auteurs_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuteurLivre_Livre">
+    <End Role="AuteurLivre" Type="Model1.Store.AuteurLivre" Multiplicity="*" />
+    <End Role="Livre" Type="Model1.Store.Livres" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Livre">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuteurLivre">
+        <PropertyRef Name="Livres_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Auteurs" EntityType="Model1.Auteur" />
+          <EntitySet Name="Livres" EntityType="Model1.Livre" />
+          <AssociationSet Name="AuteurLivre" Association="Model1.AuteurLivre">
+            <End Role="Auteur" EntitySet="Auteurs" />
+            <End Role="Livre" EntitySet="Livres" />
+          </AssociationSet>
+          <EntitySet Name="Categories" EntityType="Model1.Categorie" />
+          <AssociationSet Name="LivreCategorie" Association="Model1.LivreCategorie">
+            <End Role="Livre" EntitySet="Livres" />
+            <End Role="Categorie" EntitySet="Categories" />
+          </AssociationSet>
+          <EntitySet Name="ClubSet" EntityType="Model1.Club" />
+          <AssociationSet Name="AuteurClub" Association="Model1.AuteurClub">
+            <End Role="Auteur" EntitySet="Auteurs" />
+            <End Role="Club" EntitySet="ClubSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Auteur">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nom" Type="String" Nullable="false" />
+          <Property Name="Prenom" Type="String" Nullable="false" />
+          <Property Name="Adresse" Type="Model1.Adresse" Nullable="false" />
+          <NavigationProperty Name="Livres" Relationship="Model1.AuteurLivre" FromRole="Auteur" ToRole="Livre" />
+          <NavigationProperty Name="Club" Relationship="Model1.AuteurClub" FromRole="Auteur" ToRole="Club" />
+        </EntityType>
+        <ComplexType Name="Adresse" >
+          <Property Type="Int32" Name="Numero" Nullable="false" />
+          <Property Type="String" Name="Rue" Nullable="false" />
+          <Property Type="String" Name="CP" Nullable="false" />
+          <Property Type="String" Name="Complement" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="Livre">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titre" Type="String" Nullable="false" />
+          <Property Name="ISBN" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Auteurs" Relationship="Model1.AuteurLivre" FromRole="Livre" ToRole="Auteur" />
+          <NavigationProperty Name="Categorie" Relationship="Model1.LivreCategorie" FromRole="Livre" ToRole="Categorie" />
+        </EntityType>
+        <Association Name="AuteurLivre">
+          <End Type="Model1.Auteur" Role="Auteur" Multiplicity="*" />
+          <End Type="Model1.Livre" Role="Livre" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Categorie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Livre" Relationship="Model1.LivreCategorie" FromRole="Categorie" ToRole="Livre" />
+        </EntityType>
+        <Association Name="LivreCategorie">
+          <End Type="Model1.Livre" Role="Livre" Multiplicity="*" />
+          <End Type="Model1.Categorie" Role="Categorie" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Club">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Auteurs" Relationship="Model1.AuteurClub" FromRole="Club" ToRole="Auteur" />
+        </EntityType>
+        <Association Name="AuteurClub">
+          <End Type="Model1.Auteur" Role="Auteur" Multiplicity="*" />
+          <End Type="Model1.Club" Role="Club" Multiplicity="1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="Auteurs">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Auteur)">
+        <MappingFragment StoreEntitySet="Auteurs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ComplexProperty Name="Adresse" TypeName="Model1.Adresse">
+            <ScalarProperty Name="Numero" ColumnName="Adresse_Numero" />
+            <ScalarProperty Name="Rue" ColumnName="Adresse_Rue" />
+            <ScalarProperty Name="CP" ColumnName="Adresse_CP" />
+            <ScalarProperty Name="Complement" ColumnName="Adresse_Complement" />
+          </ComplexProperty>
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Livres">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Livre)">
+        <MappingFragment StoreEntitySet="Livres">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Titre" ColumnName="Titre" />
+          <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Categorie)">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClubSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Club)">
+        <MappingFragment StoreEntitySet="ClubSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AuteurLivre" TypeName="Model1.AuteurLivre" StoreEntitySet="AuteurLivre">
+      <EndProperty Name="Auteur">
+        <ScalarProperty Name="Id" ColumnName="Auteurs_Id" />
+      </EndProperty>
+      <EndProperty Name="Livre">
+        <ScalarProperty Name="Id" ColumnName="Livres_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="LivreCategorie" TypeName="Model1.LivreCategorie" StoreEntitySet="Livres">
+      <EndProperty Name="Categorie">
+        <ScalarProperty Name="Id" ColumnName="Categorie_Id" />
+      </EndProperty>
+      <EndProperty Name="Livre">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AuteurClub" TypeName="Model1.AuteurClub" StoreEntitySet="Auteurs">
+      <EndProperty Name="Club">
+        <ScalarProperty Name="Id" ColumnName="Club_Id" />
+      </EndProperty>
+      <EndProperty Name="Auteur">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
