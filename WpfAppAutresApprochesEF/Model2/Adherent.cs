@@ -12,4 +12,4 @@ namespace WpfAppAutresApprochesEF.Model2
         public string Name { get; set; }
     }
 }
-}
+

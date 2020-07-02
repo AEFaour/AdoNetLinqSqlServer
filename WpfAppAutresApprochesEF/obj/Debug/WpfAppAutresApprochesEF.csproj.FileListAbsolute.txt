@@ -13,3 +13,12 @@ C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\WpfAppAu
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\WpfAppAutresApprochesEF.csproj.CoreCompileInputs.cache
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\WpfAppAutresApprochesEF.exe
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\WpfAppAutresApprochesEF.pdb
+C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\WpfAppAutresApprochesEF_Content.g.cs
+C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\bin\Debug\EntityFramework.dll
+C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\bin\Debug\EntityFramework.xml
+C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\bin\Debug\fr\EntityFramework.resources.dll
+C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
+C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\WpfAppAutresApprochesEF.csproj.CopyComplete
+C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\WpfAppAutresApprochesEF.Migrations.Moyenne.resources

@@ -78,9 +78,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\202007021018377_Moyenne.cs" />
+    <Compile Include="Migrations\202007021018377_Moyenne.Designer.cs">
+      <DependentUpon>202007021018377_Moyenne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model2\Activity.cs" />
     <Compile Include="Model2\Adherent.cs" />
     <Compile Include="Model2\Model2.cs" />
+    <Compile Include="Model3\Cours.cs" />
+    <Compile Include="Model3\EFModel3.cs" />
+    <Compile Include="Model3\Etudiants.cs" />
     <Compile Include="Model\Adresse.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -124,6 +132,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\202007021018377_Moyenne.resx">
+      <DependentUpon>202007021018377_Moyenne.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

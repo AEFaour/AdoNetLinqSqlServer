@@ -16,6 +16,8 @@ namespace WpfAppAutresApprochesEF.Model3
 
         public int Id { get; set; }
 
+        public int MoyennePasse { get; set; }
+
         public string Libelle { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

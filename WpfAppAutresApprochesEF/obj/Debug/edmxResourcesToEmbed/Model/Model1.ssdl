@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AuteurLivre">
+    <Key>
+      <PropertyRef Name="Auteurs_Id" />
+      <PropertyRef Name="Livres_Id" />
+    </Key>
+    <Property Name="Auteurs_Id" Type="int" Nullable="false" />
+    <Property Name="Livres_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Auteurs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Prenom" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Adresse_Numero" Type="int" Nullable="false" />
+    <Property Name="Adresse_Rue" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Adresse_CP" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Adresse_Complement" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Club_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClubSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Livres">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ISBN" Type="int" Nullable="false" />
+    <Property Name="AnneeParuation" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Categorie_Id" Type="int" Nullable="false" />
+    <Property Name="langue" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_AuteurClub">
+    <End Role="ClubSet" Type="Self.ClubSet" Multiplicity="1" />
+    <End Role="Auteurs" Type="Self.Auteurs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ClubSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Auteurs">
+        <PropertyRef Name="Club_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuteurLivre_Auteur">
+    <End Role="Auteurs" Type="Self.Auteurs" Multiplicity="1" />
+    <End Role="AuteurLivre" Type="Self.AuteurLivre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Auteurs">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuteurLivre">
+        <PropertyRef Name="Auteurs_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AuteurLivre_Livre">
+    <End Role="Livres" Type="Self.Livres" Multiplicity="1" />
+    <End Role="AuteurLivre" Type="Self.AuteurLivre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Livres">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AuteurLivre">
+        <PropertyRef Name="Livres_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LivreCategorie">
+    <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
+    <End Role="Livres" Type="Self.Livres" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Livres">
+        <PropertyRef Name="Categorie_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="AuteurLivre" EntityType="Self.AuteurLivre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Auteurs" EntityType="Self.Auteurs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClubSet" EntityType="Self.ClubSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Livres" EntityType="Self.Livres" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AuteurClub" Association="Self.FK_AuteurClub">
+      <End Role="ClubSet" EntitySet="ClubSet" />
+      <End Role="Auteurs" EntitySet="Auteurs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuteurLivre_Auteur" Association="Self.FK_AuteurLivre_Auteur">
+      <End Role="Auteurs" EntitySet="Auteurs" />
+      <End Role="AuteurLivre" EntitySet="AuteurLivre" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AuteurLivre_Livre" Association="Self.FK_AuteurLivre_Livre">
+      <End Role="Livres" EntitySet="Livres" />
+      <End Role="AuteurLivre" EntitySet="AuteurLivre" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LivreCategorie" Association="Self.FK_LivreCategorie">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Livres" EntitySet="Livres" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

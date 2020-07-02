@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="Auteurs">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Auteur)">
+        <MappingFragment StoreEntitySet="Auteurs">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ComplexProperty Name="Adresse" TypeName="Model1.Adresse">
+            <ScalarProperty Name="Numero" ColumnName="Adresse_Numero" />
+            <ScalarProperty Name="Rue" ColumnName="Adresse_Rue" />
+            <ScalarProperty Name="CP" ColumnName="Adresse_CP" />
+            <ScalarProperty Name="Complement" ColumnName="Adresse_Complement" />
+          </ComplexProperty>
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Livres">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Livre)">
+        <MappingFragment StoreEntitySet="Livres">
+          <ScalarProperty Name="langue" ColumnName="langue" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Titre" ColumnName="Titre" />
+          <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+          <ScalarProperty Name="AnneeParuation" ColumnName="AnneeParuation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Categorie)">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClubSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Club)">
+        <MappingFragment StoreEntitySet="ClubSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AuteurLivre" TypeName="Model1.AuteurLivre" StoreEntitySet="AuteurLivre">
+      <EndProperty Name="Auteur">
+        <ScalarProperty Name="Id" ColumnName="Auteurs_Id" />
+      </EndProperty>
+      <EndProperty Name="Livre">
+        <ScalarProperty Name="Id" ColumnName="Livres_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="LivreCategorie" TypeName="Model1.LivreCategorie" StoreEntitySet="Livres">
+      <EndProperty Name="Categorie">
+        <ScalarProperty Name="Id" ColumnName="Categorie_Id" />
+      </EndProperty>
+      <EndProperty Name="Livre">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AuteurClub" TypeName="Model1.AuteurClub" StoreEntitySet="Auteurs">
+      <EndProperty Name="Club">
+        <ScalarProperty Name="Id" ColumnName="Club_Id" />
+      </EndProperty>
+      <EndProperty Name="Auteur">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

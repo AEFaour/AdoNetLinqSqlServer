@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Auteurs" EntityType="Model1.Auteur" />
+    <EntitySet Name="Livres" EntityType="Model1.Livre" />
+    <AssociationSet Name="AuteurLivre" Association="Model1.AuteurLivre">
+      <End Role="Auteur" EntitySet="Auteurs" />
+      <End Role="Livre" EntitySet="Livres" />
+    </AssociationSet>
+    <EntitySet Name="Categories" EntityType="Model1.Categorie" />
+    <AssociationSet Name="LivreCategorie" Association="Model1.LivreCategorie">
+      <End Role="Livre" EntitySet="Livres" />
+      <End Role="Categorie" EntitySet="Categories" />
+    </AssociationSet>
+    <EntitySet Name="ClubSet" EntityType="Model1.Club" />
+    <AssociationSet Name="AuteurClub" Association="Model1.AuteurClub">
+      <End Role="Auteur" EntitySet="Auteurs" />
+      <End Role="Club" EntitySet="ClubSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Auteur">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Prenom" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Adresse" Type="Model1.Adresse" Nullable="false" />
+    <NavigationProperty Name="Livres" Relationship="Model1.AuteurLivre" FromRole="Auteur" ToRole="Livre" />
+    <NavigationProperty Name="Club" Relationship="Model1.AuteurClub" FromRole="Auteur" ToRole="Club" />
+  </EntityType>
+  <ComplexType Name="Adresse">
+    <Property Type="Int32" Name="Numero" Nullable="false" />
+    <Property Type="String" Name="Rue" Nullable="false" />
+    <Property Type="String" Name="CP" Nullable="false" />
+    <Property Type="String" Name="Complement" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="Livre">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Titre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ISBN" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Auteurs" Relationship="Model1.AuteurLivre" FromRole="Livre" ToRole="Auteur" />
+    <NavigationProperty Name="Categorie" Relationship="Model1.LivreCategorie" FromRole="Livre" ToRole="Categorie" />
+    <Property Name="AnneeParuation" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="langue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="AuteurLivre">
+    <End Type="Model1.Auteur" Role="Auteur" Multiplicity="*" />
+    <End Type="Model1.Livre" Role="Livre" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Categorie">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Livre" Relationship="Model1.LivreCategorie" FromRole="Categorie" ToRole="Livre" />
+  </EntityType>
+  <Association Name="LivreCategorie">
+    <End Type="Model1.Livre" Role="Livre" Multiplicity="*" />
+    <End Type="Model1.Categorie" Role="Categorie" Multiplicity="1" />
+  </Association>
+  <EntityType Name="Club">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Auteurs" Relationship="Model1.AuteurClub" FromRole="Club" ToRole="Auteur" />
+  </EntityType>
+  <Association Name="AuteurClub">
+    <End Type="Model1.Auteur" Role="Auteur" Multiplicity="*" />
+    <End Type="Model1.Club" Role="Club" Multiplicity="1" />
+  </Association>
+</Schema>
