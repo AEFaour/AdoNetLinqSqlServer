@@ -23,11 +23,20 @@ namespace WpfAppAutresApprochesEF.Commandes
             this.gestionBiblio = gestionBiblio;
         }
 
-        public event EventHandler CanExecuteChanged;
+        public event EventHandler CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
+        }
 
         public bool CanExecute(object parameter)
         {
-            return true;
+            Livre livre = (Livre)parameter;
+            // Le titre ne doit pas être null
+            if (livre == null)
+                return false;
+            else
+                return !String.IsNullOrEmpty(livre.Titre);
         }
 
         public void Execute(object parameter)
@@ -38,8 +47,6 @@ namespace WpfAppAutresApprochesEF.Commandes
             livre.Auteurs.Add(a);
             livre.Categorie = categorie;
             GestionBiblio.AjouterUnLivre(livre);
-
-
         }
     }
 }
