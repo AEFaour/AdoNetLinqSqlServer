@@ -95,10 +95,10 @@
                         </ListView.View>
 
                     </ListView>
-                    <ComboBox ItemsSource="{Binding Path=Livres}" 
+                    <!--<ComboBox ItemsSource="{Binding Path=Livres}" 
                               DisplayMemberPath="Nom" 
                               SelectedValue="{Binding Auteur}"
-                              x:Name="cbbLivre" HorizontalAlignment="Left" Height="26" Margin="112,169,0,0" VerticalAlignment="Top" Width="164" Grid.ColumnSpan="3"/>
+                              x:Name="cbbLivre" HorizontalAlignment="Left" Height="26" Margin="112,169,0,0" VerticalAlignment="Top" Width="164" Grid.ColumnSpan="3"/>-->
 
                 </Grid>
             </TabItem>
