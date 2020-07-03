@@ -21,6 +21,7 @@ namespace WpfAppAutresApprochesEF.ViewModel
         public AjoutLivre AjoutLivre { get; set; }
         public Action1 Action1 { get; set; }
         public Action2 Action2 { get; set; }
+        public AjoutCategorie AjoutCategorie { get; set; }
 
         private Livre livre;
         private Auteur auteur;
@@ -41,6 +42,8 @@ namespace WpfAppAutresApprochesEF.ViewModel
             get => categories; // Syntaxe c# auto
             set => categories = value;
         }
+
+
 
         public Livre Livre
         {
@@ -79,6 +82,7 @@ namespace WpfAppAutresApprochesEF.ViewModel
                 categories = new ObservableCollection<Categorie>(dtc.Categories);
             }
             AjoutLivre = new AjoutLivre(this);
+            AjoutCategorie = new AjoutCategorie(this);
             Action1 = new Action1(this);
             Action2 = new Action2(this);
             Livre = new Livre();
@@ -96,6 +100,12 @@ namespace WpfAppAutresApprochesEF.ViewModel
             return dtc.SaveChanges();
         }
 
+        internal static void AjouterUneCategorie(Categorie categorie)
+        {
+            dtc.Categories.Add(categorie);
+            dtc.SaveChanges();
+            categories.Add(categorie);
+        }
         public void Dispose()
         {
             dtc.Dispose();
