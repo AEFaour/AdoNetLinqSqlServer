@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using WpfAppAutresApprochesEF.Model;
 using WpfAppAutresApprochesEF.ViewModel;
 
 namespace WpfAppAutresApprochesEF.Commandes
@@ -31,7 +32,14 @@ namespace WpfAppAutresApprochesEF.Commandes
 
         public void Execute(object parameter)
         {
-            int i = 0;
+            Auteur a = gestionBiblio.Auteur;
+            Categorie categorie = gestionBiblio.Categorie;
+            Livre livre = (Livre)parameter;
+            livre.Auteurs.Add(a);
+            livre.Categorie = categorie;
+            GestionBiblio.AjouterUnLivre(livre);
+
+
         }
     }
 }

@@ -21,3 +21,4 @@ C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\WpfAppAu
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\WpfAppAutresApprochesEF.csproj.CopyComplete
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\WpfAppAutresApprochesEF.exe
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\WpfAppAutresApprochesEF.pdb
+C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\WpfAppAutresApprochesEF.csprojAssemblyReference.cache

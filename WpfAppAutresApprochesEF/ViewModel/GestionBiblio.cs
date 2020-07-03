@@ -22,6 +22,10 @@ namespace WpfAppAutresApprochesEF.ViewModel
         public Action1 Action1 { get; set; }
         public Action2 Action2 { get; set; }
 
+        private Livre livre;
+        private Auteur auteur;
+        private Categorie categorie;
+
         public ObservableCollection<Livre> Livres
         {
             get { return livres; }
@@ -36,6 +40,22 @@ namespace WpfAppAutresApprochesEF.ViewModel
         {
             get => categories; // Syntaxe c# auto
             set => categories = value;
+        }
+
+        public Livre Livre
+        {
+            get => livre;
+            set => livre = value;
+        }
+        public Auteur Auteur
+        {
+            get => auteur;
+            set => auteur = value;
+        }
+        public Categorie Categorie
+        {
+            get => categorie;
+            set => categorie = value;
         }
 
 
@@ -61,6 +81,10 @@ namespace WpfAppAutresApprochesEF.ViewModel
             AjoutLivre = new AjoutLivre(this);
             Action1 = new Action1(this);
             Action2 = new Action2(this);
+            Livre = new Livre();
+            Auteur = new Auteur();
+            Categorie = new Categorie();
+
         }
 
 
