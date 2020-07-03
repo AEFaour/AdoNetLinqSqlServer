@@ -99,7 +99,7 @@ namespace WpfAppAutresApprochesEF
             //Atacher une categorie
             Categorie c = (Categorie)cbbCategorie.SelectedItem;
             l.Categorie = c;
-            GestionBiblio.AjouterLivre(l);
+            GestionBiblio.AjouterUnLivre(l);
         }
     }
 }

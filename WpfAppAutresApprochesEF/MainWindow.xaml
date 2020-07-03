@@ -18,9 +18,11 @@
                     <Label Content="Titre" HorizontalAlignment="Left" Height="24" Margin="29,21,0,0" VerticalAlignment="Top" Width="95"/>
                     <TextBox x:Name="txtISBN" HorizontalAlignment="Left" Height="34" Margin="112,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="236" Background="#FFF9F6F5" />
                     <Label Content="ISBN" HorizontalAlignment="Left" Height="24" Margin="29,71,0,0" VerticalAlignment="Top" Width="95"/>
-                    <TextBox x:Name="txtAnnee" HorizontalAlignment="Left" Height="33" Margin="112,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="109" Background="#FFF9F6F5" ContextMenuClosing="Button_Click" />
+                    <TextBox x:Name="txtAnnee" HorizontalAlignment="Left" Height="33" Margin="112,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="109" Background="#FFF9F6F5" />
                     <Label Content="Annee" HorizontalAlignment="Left" Height="24" Margin="29,120,0,0" VerticalAlignment="Top" Width="95"/>
-                    <Button Content="Ajouter" HorizontalAlignment="Left" Height="25" Margin="625,168,0,0" VerticalAlignment="Top" Width="136" Click="AjoutLivre_Click" RenderTransformOrigin="0.419,-0.24" />
+                    <Button Command="{Binding AjoutLivre}" Content="Ajouter" HorizontalAlignment="Left" Height="25" Margin="625,168,0,0" VerticalAlignment="Top" Width="136" RenderTransformOrigin="0.419,-0.24" />
+                    <Button Command="{Binding Action1}" Content="Test Cmd1" HorizontalAlignment="Left" Height="25" Margin="625,70,0,0" VerticalAlignment="Top" Width="136" RenderTransformOrigin="0.419,-0.24" />
+                    <Button Command="{Binding Action2}" Content="Test Cmd2" HorizontalAlignment="Left" Height="25" Margin="625,119,0,0" VerticalAlignment="Top" Width="136" RenderTransformOrigin="0.419,-0.24" />
 
                     <ListView Margin="0,217,0,0" Background="#FFDD4EE4" ItemsSource="{Binding Path=Livres}">
                         <ListView.View>

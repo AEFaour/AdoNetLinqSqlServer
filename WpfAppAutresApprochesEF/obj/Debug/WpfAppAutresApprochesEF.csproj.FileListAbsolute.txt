@@ -1,3 +1,8 @@
+C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\MainWindow.g.cs
+C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\App.g.cs
+C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\WpfAppAutresApprochesEF_Content.g.cs
+C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\WpfAppAutresApprochesEF_MarkupCompile.cache
+C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\WpfAppAutresApprochesEF_MarkupCompile.lref
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\bin\Debug\WpfAppAutresApprochesEF.exe.config
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\bin\Debug\WpfAppAutresApprochesEF.exe
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\bin\Debug\WpfAppAutresApprochesEF.pdb
@@ -7,11 +12,6 @@ C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\bin\Debug\EntityFr
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\bin\Debug\fr\EntityFramework.resources.dll
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\bin\Debug\fr\EntityFramework.SqlServer.resources.dll
-C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\MainWindow.g.cs
-C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\App.g.cs
-C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\WpfAppAutresApprochesEF_Content.g.cs
-C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\WpfAppAutresApprochesEF_MarkupCompile.cache
-C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\WpfAppAutresApprochesEF_MarkupCompile.lref
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\MainWindow.baml
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\WpfAppAutresApprochesEF.g.resources
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfAppAutresApprochesEF\obj\Debug\WpfAppAutresApprochesEF.Migrations.Moyenne.resources

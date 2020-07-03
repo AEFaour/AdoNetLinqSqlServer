@@ -65,6 +65,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commandes\Action1.cs" />
+    <Compile Include="Commandes\Action2.cs" />
+    <Compile Include="Commandes\AjoutLivre.cs" />
     <Compile Include="ViewModel\GestionBiblio.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfAppAutresApprochesEF.Commandes;
 using WpfAppAutresApprochesEF.Model;
 
 namespace WpfAppAutresApprochesEF.ViewModel
@@ -16,6 +17,11 @@ namespace WpfAppAutresApprochesEF.ViewModel
         private static ObservableCollection<Auteur> auteurs;
 
         private static ObservableCollection<Categorie> categories;
+
+        public AjoutLivre AjoutLivre { get; set; }
+        public Action1 Action1 { get; set; }
+        public Action2 Action2 { get; set; }
+
         public ObservableCollection<Livre> Livres
         {
             get { return livres; }
@@ -52,10 +58,14 @@ namespace WpfAppAutresApprochesEF.ViewModel
             {
                 categories = new ObservableCollection<Categorie>(dtc.Categories);
             }
+            AjoutLivre = new AjoutLivre(this);
+            Action1 = new Action1(this);
+            Action2 = new Action2(this);
         }
 
 
-        public static int AjouterLivre(Livre livre)
+
+        public static int AjouterUnLivre(Livre livre)
         {
             dtc.Livres.Add(livre);
             livres.Add(livre);
