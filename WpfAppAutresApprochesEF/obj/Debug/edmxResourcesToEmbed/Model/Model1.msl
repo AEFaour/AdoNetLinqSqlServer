@@ -30,6 +30,7 @@
     <EntitySetMapping Name="Categories">
       <EntityTypeMapping TypeName="IsTypeOf(Model1.Categorie)">
         <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -37,6 +38,7 @@
     <EntitySetMapping Name="ClubSet">
       <EntityTypeMapping TypeName="IsTypeOf(Model1.Club)">
         <MappingFragment StoreEntitySet="ClubSet">
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

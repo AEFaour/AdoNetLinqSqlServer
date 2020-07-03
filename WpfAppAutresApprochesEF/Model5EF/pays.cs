@@ -7,23 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WpfAppAutresApprochesEF.Model
+namespace WpfAppAutresApprochesEF.Model5EF
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Club
+    public partial class pays
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Club()
+        public pays()
         {
-            this.Auteurs = new HashSet<Auteur>();
+            this.PaysFilm = new HashSet<PaysFilm>();
         }
     
-        public int Id { get; set; }
+        public int id { get; set; }
         public string libelle { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Auteur> Auteurs { get; set; }
+        public virtual ICollection<PaysFilm> PaysFilm { get; set; }
     }
 }

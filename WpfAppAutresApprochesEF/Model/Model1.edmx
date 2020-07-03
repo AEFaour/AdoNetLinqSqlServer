@@ -31,12 +31,14 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="libelle" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="ClubSet">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="libelle" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Livres">
           <Key>
@@ -181,6 +183,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Livre" Relationship="Model1.LivreCategorie" FromRole="Categorie" ToRole="Livre" />
+          <Property Name="libelle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <Association Name="LivreCategorie">
           <End Type="Model1.Livre" Role="Livre" Multiplicity="*" />
@@ -192,6 +195,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Auteurs" Relationship="Model1.AuteurClub" FromRole="Club" ToRole="Auteur" />
+          <Property Name="libelle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="AuteurClub">
           <End Type="Model1.Auteur" Role="Auteur" Multiplicity="*" />
@@ -232,14 +236,16 @@
     <EntitySetMapping Name="Categories">
       <EntityTypeMapping TypeName="IsTypeOf(Model1.Categorie)">
         <MappingFragment StoreEntitySet="Categories">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ClubSet">
       <EntityTypeMapping TypeName="IsTypeOf(Model1.Club)">
         <MappingFragment StoreEntitySet="ClubSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -65,6 +65,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\GestionBiblio.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -90,6 +91,33 @@
     <Compile Include="Model3\Cours.cs" />
     <Compile Include="Model3\EFModel3.cs" />
     <Compile Include="Model3\Etudiants.cs" />
+    <Compile Include="Model5EF\EFVideotheque2.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFVideotheque2.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model5EF\EFVideotheque2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFVideotheque2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model5EF\EFVideotheque2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFVideotheque2.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model5EF\Films.cs">
+      <DependentUpon>EFVideotheque2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model5EF\Genres.cs">
+      <DependentUpon>EFVideotheque2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model5EF\pays.cs">
+      <DependentUpon>EFVideotheque2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model5EF\PaysFilm.cs">
+      <DependentUpon>EFVideotheque2.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model5LinqToSQL\DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -149,6 +177,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="Model5EF\EFVideotheque2.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EFVideotheque2.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model5EF\EFVideotheque2.edmx.diagram">
+      <DependentUpon>EFVideotheque2.edmx</DependentUpon>
+    </None>
     <None Include="Model5LinqToSQL\DataClasses1.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
@@ -170,6 +205,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Model5EF\EFVideotheque2.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EFVideotheque2.edmx</DependentUpon>
+      <LastGenOutput>EFVideotheque2.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model5EF\EFVideotheque2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EFVideotheque2.edmx</DependentUpon>
+      <LastGenOutput>EFVideotheque2.cs</LastGenOutput>
+    </Content>
     <Content Include="Model\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>

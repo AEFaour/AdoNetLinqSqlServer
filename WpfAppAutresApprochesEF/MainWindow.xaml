@@ -4,11 +4,64 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppAutresApprochesEF"
+        xmlns:viewM="clr-namespace:WpfAppAutresApprochesEF.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" FontFamily="Times New Roman" FontSize="14">
+    <!--<Window.DataContext>
+        <viewM:GestionBiblio />
+    </Window.DataContext>-->
     <Grid>
-        <TabControl>            <TabItem Header="DBML-DataClasse">                <Grid Background="#FFD66147">                    <DataGrid x:Name="dtgDBML" Margin="0,63,0,0" Background="#FFE44030"/>                    <TextBlock HorizontalAlignment="Left"                                Margin="173,10,0,0"                               TextWrapping="Wrap"                               Text="Data classe dataContext" VerticalAlignment="Top" Foreground="#FF3C11FF" FontSize="25"/>
-                    <Button Content="Afficher" HorizontalAlignment="Left" Height="25" Margin="652,16,0,0" VerticalAlignment="Top" Width="105" Click="DBML_Afficher_FilmGenre_Click"/>                </Grid>            </TabItem>            <TabItem Header="TabItem">                <Grid Background="#FF9DA5D4"/>            </TabItem>        </TabControl>
+        <TabControl>
+            <TabItem Header="Livres">
+                <Grid Background="#FFC29DD4">
+                    <TextBox x:Name="txtTitre" HorizontalAlignment="Left" Height="48" Margin="112,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="509" Background="#FFF9F6F5" />
+                    <Label Content="Titre" HorizontalAlignment="Left" Height="24" Margin="29,21,0,0" VerticalAlignment="Top" Width="95"/>
+                    <TextBox x:Name="txtISBN" HorizontalAlignment="Left" Height="34" Margin="112,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="236" Background="#FFF9F6F5" />
+                    <Label Content="ISBN" HorizontalAlignment="Left" Height="24" Margin="29,71,0,0" VerticalAlignment="Top" Width="95"/>
+                    <TextBox x:Name="txtAnnee" HorizontalAlignment="Left" Height="33" Margin="112,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="109" Background="#FFF9F6F5" ContextMenuClosing="Button_Click" />
+                    <Label Content="Annee" HorizontalAlignment="Left" Height="24" Margin="29,120,0,0" VerticalAlignment="Top" Width="95"/>
+                    <Button Content="Ajouter" HorizontalAlignment="Left" Height="25" Margin="625,168,0,0" VerticalAlignment="Top" Width="136" Click="AjoutLivre_Click" RenderTransformOrigin="0.419,-0.24" />
+
+                    <ListView Margin="0,217,0,0" Background="#FFDD4EE4" ItemsSource="{Binding Path=Livres}">
+                        <ListView.View>
+
+                            <GridView>
+                                <GridViewColumn Header="Numero" Width="100" DisplayMemberBinding="{Binding Path=Id }"/>
+                                <GridViewColumn Header="ISBN" Width="100" DisplayMemberBinding="{Binding Path=ISBN }"/>
+                                <GridViewColumn Header="Titre" Width="auto" DisplayMemberBinding="{Binding Path=Titre }"/>
+
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <Label Content="Auteur" HorizontalAlignment="Left" Height="24" Margin="29,169,0,0" VerticalAlignment="Top" Width="95"/>
+                    <Label Content="Categorie" HorizontalAlignment="Left" Height="24" Margin="317,171,0,0" VerticalAlignment="Top" Width="95"/>
+                    <ComboBox ItemsSource="{Binding Path=Auteurs}" DisplayMemberPath="Nom" x:Name="cbbAuteur" HorizontalAlignment="Left" Height="26" Margin="112,169,0,0" VerticalAlignment="Top" Width="164"/>
+                    <ComboBox ItemsSource="{Binding Path=Categories}" DisplayMemberPath="libelle" x:Name="cbbCategorie" HorizontalAlignment="Left" Height="26" Margin="426,169,0,0" VerticalAlignment="Top" Width="164" RenderTransformOrigin="0.598,-0.154"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="DBML-EDMX">
+                <Grid Background="#FFD66147">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="53*"/>
+                        <ColumnDefinition Width="72*"/>
+                        <ColumnDefinition Width="66*"/>
+                        <ColumnDefinition Width="595*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="dtgDBML" Margin="0,63,0,0" Background="#FFE45B4E" Grid.ColumnSpan="4"/>
+                    <TextBlock HorizontalAlignment="Left" 
+                               Margin="48,10,0,0"
+                               TextWrapping="Wrap"
+                               Text="Data classe dataContext" VerticalAlignment="Top" Foreground="#FF3C11FF" FontSize="25" Grid.Column="2" Grid.ColumnSpan="2"/>
+                    <Button Content="Afficher" HorizontalAlignment="Left" Height="25" Margin="461,16,0,0" VerticalAlignment="Top" Width="105" Click="DBML_Afficher_FilmGenre_Click" Grid.Column="3"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FF9DA5D4"/>
+            </TabItem>
+            <Label Content="Label" Height="13" Width="97"/>
+
+        </TabControl>
 
 
     </Grid>

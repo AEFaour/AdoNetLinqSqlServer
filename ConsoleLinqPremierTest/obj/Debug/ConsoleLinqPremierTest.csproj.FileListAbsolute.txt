@@ -1,6 +1,0 @@
-C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleLinqPremierTest\bin\Debug\ConsoleLinqPremierTest.exe.config
-C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleLinqPremierTest\bin\Debug\ConsoleLinqPremierTest.exe
-C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleLinqPremierTest\bin\Debug\ConsoleLinqPremierTest.pdb
-C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleLinqPremierTest\obj\Debug\ConsoleLinqPremierTest.csproj.CoreCompileInputs.cache
-C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleLinqPremierTest\obj\Debug\ConsoleLinqPremierTest.exe
-C:\Users\Anas FAOUR\source\repos\LINQ\ConsoleLinqPremierTest\obj\Debug\ConsoleLinqPremierTest.pdb

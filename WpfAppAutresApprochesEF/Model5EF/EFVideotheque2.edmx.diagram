@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4faca9c65db248b8a60cbb6db1af9b34" Name="Diagram1">
+        <EntityTypeShape EntityType="BBVideotheque2Model.Films" Width="1.5" PointX="5" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBVideotheque2Model.Genres" Width="1.5" PointX="5" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBVideotheque2Model.pays" Width="1.5" PointX="1" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BBVideotheque2Model.PaysFilm" Width="1.5" PointX="1" PointY="3" IsExpanded="true" />
+        <AssociationConnector Association="BBVideotheque2Model.FK__PaysFilm__idFilm__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="BBVideotheque2Model.FK__PaysFilm__idPays__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="BBVideotheque2Model.GenreFilms" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

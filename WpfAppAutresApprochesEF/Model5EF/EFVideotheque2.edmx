@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BBVideotheque2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Films">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Titre" Type="nvarchar(max)" />
+          <Property Name="Duree" Type="int" Nullable="false" />
+          <Property Name="Resume" Type="nvarchar(max)" />
+          <Property Name="Annee" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GenreFilms">
+          <Key>
+            <PropertyRef Name="Genre_Id" />
+            <PropertyRef Name="Film_Id" />
+          </Key>
+          <Property Name="Genre_Id" Type="int" Nullable="false" />
+          <Property Name="Film_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Genres">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Libelle" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="pays">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="libelle" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="PaysFilm">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idFilm" Type="int" />
+          <Property Name="idPays" Type="int" />
+          <Property Name="mois" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <Association Name="FK__PaysFilm__idFilm__52593CB8">
+          <End Role="Films" Type="Self.Films" Multiplicity="0..1" />
+          <End Role="PaysFilm" Type="Self.PaysFilm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Films">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PaysFilm">
+              <PropertyRef Name="idFilm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PaysFilm__idPays__534D60F1">
+          <End Role="pays" Type="Self.pays" Multiplicity="0..1" />
+          <End Role="PaysFilm" Type="Self.PaysFilm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pays">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PaysFilm">
+              <PropertyRef Name="idPays" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GenreFilms_dbo_Films_Film_Id">
+          <End Role="Films" Type="Self.Films" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GenreFilms" Type="Self.GenreFilms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Films">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GenreFilms">
+              <PropertyRef Name="Film_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_GenreFilms_dbo_Genres_Genre_Id">
+          <End Role="Genres" Type="Self.Genres" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="GenreFilms" Type="Self.GenreFilms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genres">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="GenreFilms">
+              <PropertyRef Name="Genre_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BBVideotheque2ModelStoreContainer">
+          <EntitySet Name="Films" EntityType="Self.Films" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GenreFilms" EntityType="Self.GenreFilms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Genres" EntityType="Self.Genres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pays" EntityType="Self.pays" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaysFilm" EntityType="Self.PaysFilm" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__PaysFilm__idFilm__52593CB8" Association="Self.FK__PaysFilm__idFilm__52593CB8">
+            <End Role="Films" EntitySet="Films" />
+            <End Role="PaysFilm" EntitySet="PaysFilm" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PaysFilm__idPays__534D60F1" Association="Self.FK__PaysFilm__idPays__534D60F1">
+            <End Role="pays" EntitySet="pays" />
+            <End Role="PaysFilm" EntitySet="PaysFilm" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GenreFilms_dbo_Films_Film_Id" Association="Self.FK_dbo_GenreFilms_dbo_Films_Film_Id">
+            <End Role="Films" EntitySet="Films" />
+            <End Role="GenreFilms" EntitySet="GenreFilms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_GenreFilms_dbo_Genres_Genre_Id" Association="Self.FK_dbo_GenreFilms_dbo_Genres_Genre_Id">
+            <End Role="Genres" EntitySet="Genres" />
+            <End Role="GenreFilms" EntitySet="GenreFilms" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BBVideotheque2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Films">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Duree" Type="Int32" Nullable="false" />
+          <Property Name="Resume" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Annee" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PaysFilm" Relationship="Self.FK__PaysFilm__idFilm__52593CB8" FromRole="Films" ToRole="PaysFilm" />
+          <NavigationProperty Name="Genres" Relationship="Self.GenreFilms" FromRole="Films" ToRole="Genres" />
+        </EntityType>
+        <EntityType Name="Genres">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Libelle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Films" Relationship="Self.GenreFilms" FromRole="Genres" ToRole="Films" />
+        </EntityType>
+        <EntityType Name="pays">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="libelle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PaysFilm" Relationship="Self.FK__PaysFilm__idPays__534D60F1" FromRole="pays" ToRole="PaysFilm" />
+        </EntityType>
+        <EntityType Name="PaysFilm">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idFilm" Type="Int32" />
+          <Property Name="idPays" Type="Int32" />
+          <Property Name="mois" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Films" Relationship="Self.FK__PaysFilm__idFilm__52593CB8" FromRole="PaysFilm" ToRole="Films" />
+          <NavigationProperty Name="pays" Relationship="Self.FK__PaysFilm__idPays__534D60F1" FromRole="PaysFilm" ToRole="pays" />
+        </EntityType>
+        <Association Name="FK__PaysFilm__idFilm__52593CB8">
+          <End Role="Films" Type="Self.Films" Multiplicity="0..1" />
+          <End Role="PaysFilm" Type="Self.PaysFilm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Films">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PaysFilm">
+              <PropertyRef Name="idFilm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PaysFilm__idPays__534D60F1">
+          <End Role="pays" Type="Self.pays" Multiplicity="0..1" />
+          <End Role="PaysFilm" Type="Self.PaysFilm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pays">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="PaysFilm">
+              <PropertyRef Name="idPays" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GenreFilms">
+          <End Role="Films" Type="Self.Films" Multiplicity="*" />
+          <End Role="Genres" Type="Self.Genres" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="BBVideotheque2Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Films" EntityType="Self.Films" />
+          <EntitySet Name="Genres" EntityType="Self.Genres" />
+          <EntitySet Name="pays" EntityType="Self.pays" />
+          <EntitySet Name="PaysFilm" EntityType="Self.PaysFilm" />
+          <AssociationSet Name="FK__PaysFilm__idFilm__52593CB8" Association="Self.FK__PaysFilm__idFilm__52593CB8">
+            <End Role="Films" EntitySet="Films" />
+            <End Role="PaysFilm" EntitySet="PaysFilm" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PaysFilm__idPays__534D60F1" Association="Self.FK__PaysFilm__idPays__534D60F1">
+            <End Role="pays" EntitySet="pays" />
+            <End Role="PaysFilm" EntitySet="PaysFilm" />
+          </AssociationSet>
+          <AssociationSet Name="GenreFilms" Association="Self.GenreFilms">
+            <End Role="Films" EntitySet="Films" />
+            <End Role="Genres" EntitySet="Genres" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BBVideotheque2ModelStoreContainer" CdmEntityContainer="BBVideotheque2Entities">
+          <EntitySetMapping Name="Films">
+            <EntityTypeMapping TypeName="BBVideotheque2Model.Films">
+              <MappingFragment StoreEntitySet="Films">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Titre" ColumnName="Titre" />
+                <ScalarProperty Name="Duree" ColumnName="Duree" />
+                <ScalarProperty Name="Resume" ColumnName="Resume" />
+                <ScalarProperty Name="Annee" ColumnName="Annee" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genres">
+            <EntityTypeMapping TypeName="BBVideotheque2Model.Genres">
+              <MappingFragment StoreEntitySet="Genres">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pays">
+            <EntityTypeMapping TypeName="BBVideotheque2Model.pays">
+              <MappingFragment StoreEntitySet="pays">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="libelle" ColumnName="libelle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaysFilm">
+            <EntityTypeMapping TypeName="BBVideotheque2Model.PaysFilm">
+              <MappingFragment StoreEntitySet="PaysFilm">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="idFilm" ColumnName="idFilm" />
+                <ScalarProperty Name="idPays" ColumnName="idPays" />
+                <ScalarProperty Name="mois" ColumnName="mois" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="GenreFilms" TypeName="BBVideotheque2Model.GenreFilms" StoreEntitySet="GenreFilms">
+            <EndProperty Name="Films">
+              <ScalarProperty Name="Id" ColumnName="Film_Id" />
+            </EndProperty>
+            <EndProperty Name="Genres">
+              <ScalarProperty Name="Id" ColumnName="Genre_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BBVideotheque2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Films">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Titre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Duree" Type="Int32" Nullable="false" />
+    <Property Name="Resume" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Annee" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="PaysFilm" Relationship="Self.FK__PaysFilm__idFilm__52593CB8" FromRole="Films" ToRole="PaysFilm" />
+    <NavigationProperty Name="Genres" Relationship="Self.GenreFilms" FromRole="Films" ToRole="Genres" />
+  </EntityType>
+  <EntityType Name="Genres">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Films" Relationship="Self.GenreFilms" FromRole="Genres" ToRole="Films" />
+  </EntityType>
+  <EntityType Name="pays">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="libelle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="PaysFilm" Relationship="Self.FK__PaysFilm__idPays__534D60F1" FromRole="pays" ToRole="PaysFilm" />
+  </EntityType>
+  <EntityType Name="PaysFilm">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idFilm" Type="Int32" />
+    <Property Name="idPays" Type="Int32" />
+    <Property Name="mois" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Films" Relationship="Self.FK__PaysFilm__idFilm__52593CB8" FromRole="PaysFilm" ToRole="Films" />
+    <NavigationProperty Name="pays" Relationship="Self.FK__PaysFilm__idPays__534D60F1" FromRole="PaysFilm" ToRole="pays" />
+  </EntityType>
+  <Association Name="FK__PaysFilm__idFilm__52593CB8">
+    <End Role="Films" Type="Self.Films" Multiplicity="0..1" />
+    <End Role="PaysFilm" Type="Self.PaysFilm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Films">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PaysFilm">
+        <PropertyRef Name="idFilm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PaysFilm__idPays__534D60F1">
+    <End Role="pays" Type="Self.pays" Multiplicity="0..1" />
+    <End Role="PaysFilm" Type="Self.PaysFilm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pays">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="PaysFilm">
+        <PropertyRef Name="idPays" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GenreFilms">
+    <End Role="Films" Type="Self.Films" Multiplicity="*" />
+    <End Role="Genres" Type="Self.Genres" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="BBVideotheque2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Films" EntityType="Self.Films" />
+    <EntitySet Name="Genres" EntityType="Self.Genres" />
+    <EntitySet Name="pays" EntityType="Self.pays" />
+    <EntitySet Name="PaysFilm" EntityType="Self.PaysFilm" />
+    <AssociationSet Name="FK__PaysFilm__idFilm__52593CB8" Association="Self.FK__PaysFilm__idFilm__52593CB8">
+      <End Role="Films" EntitySet="Films" />
+      <End Role="PaysFilm" EntitySet="PaysFilm" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PaysFilm__idPays__534D60F1" Association="Self.FK__PaysFilm__idPays__534D60F1">
+      <End Role="pays" EntitySet="pays" />
+      <End Role="PaysFilm" EntitySet="PaysFilm" />
+    </AssociationSet>
+    <AssociationSet Name="GenreFilms" Association="Self.GenreFilms">
+      <End Role="Films" EntitySet="Films" />
+      <End Role="Genres" EntitySet="Genres" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
