@@ -103,7 +103,7 @@ namespace WpfAppAutresApprochesEF.ViewModel
         internal static void AjouterUneCategorie(Categorie categorie)
         {
             // dtc.Categories.Add(categorie);
-            dtc.AjoutCategorie(categorie.libelle);
+            int i = dtc.AjoutCategorie(categorie.libelle);
             dtc.SaveChanges();
             categories.Add(categorie);
         }

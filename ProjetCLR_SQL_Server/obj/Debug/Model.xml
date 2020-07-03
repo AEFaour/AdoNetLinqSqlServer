@@ -47,8 +47,8 @@
 			<Property Name="BodyScript">
 				<Value><![CDATA[
 	insert into categories values (@param1);
-
-RETURN 0]]></Value>
+	
+RETURN scope_identity();]]></Value>
 			</Property>
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
@@ -81,7 +81,7 @@ RETURN 0]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="120" />
+				<Property Name="Length" Value="137" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[AjoutCategorie]&#xD;&#xA;&#x9;@param1 varchar(50)&#xD;&#xA;AS" />

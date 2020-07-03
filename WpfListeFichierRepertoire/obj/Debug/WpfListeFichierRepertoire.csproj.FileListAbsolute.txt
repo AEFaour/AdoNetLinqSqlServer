@@ -3,7 +3,6 @@ C:\Users\Anas FAOUR\source\repos\LINQ\WpfListeFichierRepertoire\bin\Debug\images
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfListeFichierRepertoire\bin\Debug\WpfListeFichierRepertoire.exe.config
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfListeFichierRepertoire\bin\Debug\WpfListeFichierRepertoire.exe
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfListeFichierRepertoire\bin\Debug\WpfListeFichierRepertoire.pdb
-C:\Users\Anas FAOUR\source\repos\LINQ\WpfListeFichierRepertoire\obj\Debug\WpfListeFichierRepertoire.csprojAssemblyReference.cache
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfListeFichierRepertoire\obj\Debug\MainWindow.g.cs
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfListeFichierRepertoire\obj\Debug\App.g.cs
 C:\Users\Anas FAOUR\source\repos\LINQ\WpfListeFichierRepertoire\obj\Debug\WpfListeFichierRepertoire_Content.g.cs
