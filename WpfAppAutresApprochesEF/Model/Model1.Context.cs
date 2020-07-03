@@ -12,6 +12,8 @@ namespace WpfAppAutresApprochesEF.Model
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class Model1Container : DbContext
     {
@@ -29,5 +31,14 @@ namespace WpfAppAutresApprochesEF.Model
         public virtual DbSet<Livre> Livres { get; set; }
         public virtual DbSet<Categorie> Categories { get; set; }
         public virtual DbSet<Club> ClubSet { get; set; }
+    
+        public virtual int AjoutCategorie(string param1)
+        {
+            var param1Parameter = param1 != null ?
+                new ObjectParameter("param1", param1) :
+                new ObjectParameter("param1", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AjoutCategorie", param1Parameter);
+        }
     }
 }

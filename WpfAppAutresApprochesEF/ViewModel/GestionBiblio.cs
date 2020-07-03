@@ -11,7 +11,7 @@ namespace WpfAppAutresApprochesEF.ViewModel
 {
     public class GestionBiblio : IDisposable
     {
-        private static Model1Container dtc;
+        public static Model1Container dtc;
         private static ObservableCollection<Livre> livres;
 
         private static ObservableCollection<Auteur> auteurs;
@@ -102,7 +102,8 @@ namespace WpfAppAutresApprochesEF.ViewModel
 
         internal static void AjouterUneCategorie(Categorie categorie)
         {
-            dtc.Categories.Add(categorie);
+            // dtc.Categories.Add(categorie);
+            dtc.AjoutCategorie(categorie.libelle);
             dtc.SaveChanges();
             categories.Add(categorie);
         }

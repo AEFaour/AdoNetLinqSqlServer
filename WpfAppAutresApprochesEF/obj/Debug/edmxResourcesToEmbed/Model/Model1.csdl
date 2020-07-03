@@ -17,6 +17,9 @@
       <End Role="Auteur" EntitySet="Auteurs" />
       <End Role="Club" EntitySet="ClubSet" />
     </AssociationSet>
+    <FunctionImport Name="AjoutCategorie">
+      <Parameter Name="param1" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Auteur">
     <Key>

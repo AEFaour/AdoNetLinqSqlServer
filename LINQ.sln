@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppBibliotheque", "WpfAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppAutresApprochesEF", "WpfAppAutresApprochesEF\WpfAppAutresApprochesEF.csproj", "{49F25413-13E7-45D8-9B05-103BFE439A32}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "ProjetCLR_SQL_Server", "ProjetCLR_SQL_Server\ProjetCLR_SQL_Server.sqlproj", "{4DA0DFF4-E5FE-4937-AC97-427C98485C9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,12 @@ Global
 		{49F25413-13E7-45D8-9B05-103BFE439A32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49F25413-13E7-45D8-9B05-103BFE439A32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49F25413-13E7-45D8-9B05-103BFE439A32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DA0DFF4-E5FE-4937-AC97-427C98485C9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DA0DFF4-E5FE-4937-AC97-427C98485C9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DA0DFF4-E5FE-4937-AC97-427C98485C9C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4DA0DFF4-E5FE-4937-AC97-427C98485C9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DA0DFF4-E5FE-4937-AC97-427C98485C9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DA0DFF4-E5FE-4937-AC97-427C98485C9C}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

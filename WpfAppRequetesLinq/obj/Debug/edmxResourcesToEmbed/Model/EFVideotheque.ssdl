@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BBVideotheque2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Films">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titre" Type="nvarchar(max)" />
+    <Property Name="Duree" Type="int" Nullable="false" />
+    <Property Name="Resume" Type="nvarchar(max)" />
+    <Property Name="Annee" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GenreFilms">
+    <Key>
+      <PropertyRef Name="Genre_Id" />
+      <PropertyRef Name="Film_Id" />
+    </Key>
+    <Property Name="Genre_Id" Type="int" Nullable="false" />
+    <Property Name="Film_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Genres">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Libelle" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="pays">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="PaysFilm">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idFilm" Type="int" />
+    <Property Name="idPays" Type="int" />
+    <Property Name="mois" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <!--Erreurs détectées durant la génération :
+avertissement 6002: La table/vue 'BBVideotheque2.dbo.vFilmLabelle' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
+  <EntityType Name="vFilmLabelle">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="idPays" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Titre" Type="nvarchar(max)" />
+    <Property Name="idPays" Type="int" Nullable="false" />
+    <Property Name="libelle" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK__PaysFilm__idFilm__52593CB8">
+    <End Role="Films" Type="Self.Films" Multiplicity="0..1" />
+    <End Role="PaysFilm" Type="Self.PaysFilm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Films">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PaysFilm">
+        <PropertyRef Name="idFilm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PaysFilm__idPays__534D60F1">
+    <End Role="pays" Type="Self.pays" Multiplicity="0..1" />
+    <End Role="PaysFilm" Type="Self.PaysFilm" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pays">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="PaysFilm">
+        <PropertyRef Name="idPays" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_GenreFilms_dbo_Films_Film_Id">
+    <End Role="Films" Type="Self.Films" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GenreFilms" Type="Self.GenreFilms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Films">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GenreFilms">
+        <PropertyRef Name="Film_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_GenreFilms_dbo_Genres_Genre_Id">
+    <End Role="Genres" Type="Self.Genres" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GenreFilms" Type="Self.GenreFilms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Genres">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GenreFilms">
+        <PropertyRef Name="Genre_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BBVideotheque2ModelStoreContainer">
+    <EntitySet Name="Films" EntityType="Self.Films" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GenreFilms" EntityType="Self.GenreFilms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Genres" EntityType="Self.Genres" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pays" EntityType="Self.pays" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaysFilm" EntityType="Self.PaysFilm" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vFilmLabelle" EntityType="Self.vFilmLabelle" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vFilmLabelle].[Id] AS [Id], 
+    [vFilmLabelle].[Titre] AS [Titre], 
+    [vFilmLabelle].[idPays] AS [idPays], 
+    [vFilmLabelle].[libelle] AS [libelle]
+    FROM [dbo].[vFilmLabelle] AS [vFilmLabelle]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__PaysFilm__idFilm__52593CB8" Association="Self.FK__PaysFilm__idFilm__52593CB8">
+      <End Role="Films" EntitySet="Films" />
+      <End Role="PaysFilm" EntitySet="PaysFilm" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PaysFilm__idPays__534D60F1" Association="Self.FK__PaysFilm__idPays__534D60F1">
+      <End Role="pays" EntitySet="pays" />
+      <End Role="PaysFilm" EntitySet="PaysFilm" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_GenreFilms_dbo_Films_Film_Id" Association="Self.FK_dbo_GenreFilms_dbo_Films_Film_Id">
+      <End Role="Films" EntitySet="Films" />
+      <End Role="GenreFilms" EntitySet="GenreFilms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_GenreFilms_dbo_Genres_Genre_Id" Association="Self.FK_dbo_GenreFilms_dbo_Genres_Genre_Id">
+      <End Role="Genres" EntitySet="Genres" />
+      <End Role="GenreFilms" EntitySet="GenreFilms" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

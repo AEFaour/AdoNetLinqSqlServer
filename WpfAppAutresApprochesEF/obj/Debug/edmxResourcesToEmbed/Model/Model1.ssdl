@@ -94,6 +94,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="AjoutCategorie" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="param1" Type="varchar" Mode="In" />
+  </Function>
   <EntityContainer Name="Model1StoreContainer">
     <EntitySet Name="AuteurLivre" EntityType="Self.AuteurLivre" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Auteurs" EntityType="Self.Auteurs" Schema="dbo" store:Type="Tables" />

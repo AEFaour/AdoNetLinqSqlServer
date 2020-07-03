@@ -67,5 +67,6 @@
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="AjoutCategorie" FunctionName="Model1.Store.AjoutCategorie" />
   </EntityContainerMapping>
 </Mapping>
